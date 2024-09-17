@@ -61,11 +61,11 @@ export default {
 
   computed: {
     algolia () {
-      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+      return {}
     },
 
     isAlgoliaSearch () {
-      return this.algolia && this.algolia.apiKey && this.algolia.indexName
+      return false
     }
   }
 }
