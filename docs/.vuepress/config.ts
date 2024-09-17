@@ -18,7 +18,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Producer",
+      title: "人间工作P",
       description: '人间工作P的技术与日常博客,Kotlin,Java,CSharp,C#,Python,github等技术文章。',
     }
   },
@@ -42,7 +42,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'xugaoyi/vuepress-theme-vdoing', // 导航栏右侧生成Github链接
+    repo: 'MrXiaoM/blog', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
@@ -89,13 +89,13 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'xugaoyi', // 必需
-      link: 'https://github.com/xugaoyi', // 可选的
+      name: 'MrXiaoM',
+      link: 'https://github.com/MrXiaoM',
     },
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://static.mcio.dev/mrxiaom.top/images/avatar.jpg',
+      avatar: 'https://static.mcio.dev/mrxiaom.top/images/avatar-original.jpg',
       name: '人间工作P',
       slogan: '我每天都好困… 最近在学习和进行 VOCALOID 创作',
     },
@@ -124,9 +124,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 页脚信息
     footer: {
-      createYear: 2024, // 博客创建年份
+      createYear: 2018, // 博客创建年份
       copyrightInfo:
-        '人间工作P | 使用主题 <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank">vuepress-theme-vdoing</a>', // 博客版权信息、备案信息等，支持a标签或换行标签</br>
+        '<a href="https://www.mrxiaom.top">人间工作P</a>',
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
