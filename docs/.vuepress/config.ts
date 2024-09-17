@@ -28,8 +28,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   themeConfig: {
     // 导航配置
     nav: [
+      { text: '主站', link: 'https://www.mrxiaom.top' }
       { text: '首页', link: '/' },
-      { text: '关于', link: '/about/' },
+      { text: '关于', link: '/about' },
       {
         text: '索引',
         link: '/archives/',
