@@ -39,9 +39,8 @@ jobs:
           user_email=`git log -1 --pretty=format:'%ae'`
           cd vdoing
           npm pack
-          npm link
           cd ..
-          npm link local-module
+          npm -D install vdoing/vuepress-theme-vdoing-1.12.9.tgz
           yarn
           yarn build
           cd docs/.vuepress/dist
