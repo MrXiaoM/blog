@@ -182,15 +182,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
 
-    [
-      "md-enhance",
-      {
-        enableAll: true,
-        presentation: {
-          plugins: ["highlight", "math", "search", "notes", "zoom"],
-        },
-      },
-    ],
+    'tabs',
     
     [
       'one-click-copy', // 代码块复制按钮
