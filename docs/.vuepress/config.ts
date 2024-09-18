@@ -182,6 +182,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
 
+    'vuepress-plugin-md-enhance',
+    
     [
       'one-click-copy', // 代码块复制按钮
       {
