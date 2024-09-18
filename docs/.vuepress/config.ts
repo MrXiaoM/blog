@@ -183,12 +183,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
 
     [
-      'md-enhance',
+      "md-enhance",
       {
-        sub: true,
-        sup: true,
-        hint: true,
-        tabs: true,
+        enableAll: true,
+        presentation: {
+          plugins: ["highlight", "math", "search", "notes", "zoom"],
+        },
       },
     ],
     
