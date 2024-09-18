@@ -95,9 +95,9 @@ default = { ip-forwarding = "proxy_protocol", ip = "<源站IP>:25560" }
 
 然后先别急着启动，要修改源站的服务端配置
 
-::: tabs
+:::: tabs
 
-@tab:active BungeeCord
+::: tab BungeeCord
 
 修改 `config.yml`
 ```yaml
@@ -127,7 +127,9 @@ listeners:
 ip_forward: true
 ```
 
-@tab Velocity
+:::
+
+::: tab Velocity
 
 修改 `velocity.toml`
 ```toml
@@ -139,13 +141,17 @@ bind = "0.0.0.0:25560"
 haproxy-protocol = true
 ```
 
-@tab Spigot
+:::
+
+::: tab Spigot
 
 如果你是单纯的单端，没有用到 BungeeCord 或 Velocity，还需要做一步额外配置，
 在上面的 `Config.toml` 中，将 `proxy_protocol` 改为 `bungeecord`，
 在服务端 `spigot.yml` 中，将 `bungeecord` 开启。
 
 :::
+
+::::
 
 以上配置均为重启服务端生效。
 
