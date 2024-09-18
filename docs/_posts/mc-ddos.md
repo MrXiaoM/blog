@@ -1,7 +1,7 @@
 ---
 title: 我在防 DDoS 网络攻击这块的一些个人见解
 date: 2024-09-18 11:53:20
-permlink: /post/mc-ddos
+permalink: /post/mc-ddos
 description: 运营 Minecraft 服务器，尽可能低成本地防 DDoS 的一次尝试
 categories:
   - Minecraft
