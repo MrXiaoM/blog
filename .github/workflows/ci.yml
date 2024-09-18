@@ -37,6 +37,11 @@ jobs:
           commit_info=`git describe --all --always --long`
           user_name=`git log -1 --pretty=format:'%an'`
           user_email=`git log -1 --pretty=format:'%ae'`
+          cd vdoing
+          npm pack
+          npm link
+          cd ..
+          npm link local-module
           yarn
           yarn build
           cd docs/.vuepress/dist

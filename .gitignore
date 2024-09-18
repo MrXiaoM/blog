@@ -1,6 +1,7 @@
 # npm
 package-lock.json
 node_modules
+/vdoing/*.tgz
 
 # yarn
 yarn.lock
