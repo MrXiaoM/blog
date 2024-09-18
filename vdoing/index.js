@@ -71,7 +71,15 @@ module.exports = (options, ctx) => {
       '@vuepress/plugin-nprogress',
       ['smooth-scroll', enableSmoothScroll],
 
-      'vuepress-plugin-md-enhance',
+      [
+        'vuepress-plugin-md-enhance',
+        {
+          sub: true,
+          sup: true,
+          hint: true,
+          tabs: true,
+        },
+      ],
 
       ['container', {
         type: 'note',
