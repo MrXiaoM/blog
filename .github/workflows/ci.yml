@@ -40,7 +40,6 @@ jobs:
           cd vdoing
           npm pack
           cd ..
-          npm -D install vdoing/vuepress-theme-vdoing-1.12.9.tgz
           yarn
           yarn build
           cd docs/.vuepress/dist
