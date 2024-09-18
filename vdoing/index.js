@@ -72,7 +72,7 @@ module.exports = (options, ctx) => {
       ['smooth-scroll', enableSmoothScroll],
 
       [
-        'vuepress-plugin-md-enhance',
+        'md-enhance',
         {
           sub: true,
           sup: true,

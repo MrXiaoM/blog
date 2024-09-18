@@ -183,7 +183,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
 
     [
-      'vuepress-plugin-md-enhance',
+      'md-enhance',
       {
         sub: true,
         sup: true,
