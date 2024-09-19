@@ -16,7 +16,11 @@
               }}</span>
             </router-link>
           </h2>
-          <span>{{ item.frontmatter.description ? item.frontmatter.description : "" }}</span>
+          <span>
+            <router-link :to="item.path">
+              {{ item.frontmatter.description ? item.frontmatter.description : "" }}
+            </router-link>
+          </span>
           <div class="article-info">
             <a
               title="作者"
