@@ -23,7 +23,7 @@
             }}</span>
           </h1>
 
-          <blockquote v-if="item.frontmatter.description">
+          <blockquote v-if="item.frontmatter && item.frontmatter.description">
             {{ item.frontmatter.description }}
           </blockquote>
 
