@@ -14,7 +14,7 @@
   margin-right 0
   list-style none
   &:hover
-    color: #666
+    color #333
   &.is-active
     color $accentColor
   &.is-disabled *
@@ -27,6 +27,8 @@
   display flex
   padding .25em .5em
   text-decoration none
+  &:hover
+    text-decoration none !important
 
 .tabs-component-panels
   padding 1em 0
