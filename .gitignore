@@ -2,6 +2,7 @@
 package-lock.json
 node_modules
 /vdoing/*.tgz
+!/modified/*.tgz
 
 # yarn
 yarn.lock
