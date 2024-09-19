@@ -2,10 +2,13 @@
   margin 2em 0
 
 .tabs-component-tabs
-  border solid 1px #ddd
   border-radius 6px
-  margin-bottom 5px
   padding-left 0
+  border 0
+  align-items stretch
+  display flex
+  justify-content flex-start
+  margin-bottom -1px
 
 .tabs-component-tab
   color #999
@@ -13,10 +16,19 @@
   font-weight 600
   margin-right 0
   list-style none
+  background linear-gradient(to right, #F8F8F8, #FFFFFF)
+  border solid 1px #ddd
+  border-radius 8px 8px 0 0
+  margin-right .25em
+  transition transform .3s ease
   &:hover
     color #333
   &.is-active
+    background #FFF
     color $accentColor
+    border-bottom solid 1px #fff
+    z-index 2
+    transform translateY(0)
   &.is-disabled *
     color #cdcdcd
     cursor not-allowed !important
@@ -31,33 +43,14 @@
     text-decoration none !important
 
 .tabs-component-panels
-  padding 1em 0
-
-.tabs-component-tabs
-  border 0
-  align-items stretch
-  display flex
-  justify-content flex-start
-  margin-bottom -1px
-
-.tabs-component-tab
-  background-color #fff
-  border solid 1px #ddd
-  border-radius 3px 3px 0 0
-  margin-right .25em
-  transition transform .3s ease
-&.is-active
-  border-bottom solid 1px #fff
-  z-index 2
-  transform translateY(0)
-
-.tabs-component-panels
   border-top-left-radius 0
   background-color #fff
   border solid 1px #ddd
   border-radius 0 6px 6px 6px
   box-shadow 0 0 10px rgba(0, 0, 0, .05)
   padding 1em 1em
+
+.tabs-component-tabs
 
 @media (max-width: $MQMobileNarrow)
   .tabs-component-panels
