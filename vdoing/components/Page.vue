@@ -23,8 +23,8 @@
             }}</span>
           </h1>
 
-          <blockquote v-if="item.frontmatter && item.frontmatter.description">
-            {{ item.frontmatter.description }}
+          <blockquote v-if="$frontmatter.description">
+            {{ $frontmatter.description }}
           </blockquote>
 
           <slot name="top" v-if="isShowSlotT" />
