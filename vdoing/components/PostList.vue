@@ -16,6 +16,7 @@
               }}</span>
             </router-link>
           </h2>
+          <span>{{ item.frontmatter.description ? item.frontmatter.description : "" }}</span>
           <div class="article-info">
             <a
               title="作者"
