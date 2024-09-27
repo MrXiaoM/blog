@@ -43,33 +43,33 @@ tags:
 ::: tab Kotlin
 ```kotlin
 plugins {
-  id("java")
+    id("java")
 
-  signing
-  `maven-publish`
+    signing
+    `maven-publish`
     id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
 }
 
 // ...
 
 publishing { // 发布配置
-  publications {
-    create<MavenPublication>("maven") {
-      from(components.getByName("java"))
-      groupId = project.group.toString()
-      artifactId = rootProject.name
-      version = project.version.toString()
-      // 需要其它的什么自己加
+    publications {
+        create<MavenPublication>("maven") {
+            from(components.getByName("java"))
+            groupId = project.group.toString()
+            artifactId = rootProject.name
+            version = project.version.toString()
+            // 需要其它的什么自己加
+        }
     }
-  }
 }
 signing { // 签名配置
-  val signingKey = findProperty("signingKey")?.toString()
-  val signingPassword = findProperty("signingPassword")?.toString()
-  if (signingKey != null && signingPassword != null) {
-    useInMemoryPgpKeys(signingKey, signingPassword)
-    sign(publishing.publications.getByName("maven"))
-  }
+    val signingKey = findProperty("signingKey")?.toString()
+    val signingPassword = findProperty("signingPassword")?.toString()
+    if (signingKey != null && signingPassword != null) {
+        useInMemoryPgpKeys(signingKey, signingPassword)
+        sign(publishing.publications.getByName("maven"))
+    }
 }
 nexusPublishing { // 仓库配置，这里用的是 sonatype 的 s01 仓库
     repositories {
