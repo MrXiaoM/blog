@@ -1,6 +1,6 @@
 ---
 title: 使用 Github Actions 工作流发布包到 Maven 仓库
-date: 2024-09-27 16:00:20
+date: 2024-09-27 16:30:20
 permalink: /post/maven-publish-ci
 description: 基于 Gradle 的一键发布工作流配置教程
 categories:
@@ -139,7 +139,9 @@ signingKey=-----BEGIN PGP PRIVATE KEY BLOCK-----\n\nlIYEZ (中间省略) yAg==\n
 signingPassword=testgpg1234
 ```
 
-发布后，到 `%HOMEPATH%/.m2/repository` 目录里根据包名寻找发布的文件，如果像图里一样出现了签名文件，则代表签名配置成功了，此时就可以将前面在 `gradle.properties` 里添加的 `signingKey` 和 `signingPassword` 删除了。
+然后执行 `publishToMavenLocal` 任务，将包发布到本地进行测试。
+
+如果没有任何报错，发布后，到 `%HOMEPATH%/.m2/repository` 目录里根据包名寻找发布的文件，如果像图里一样出现了签名文件，则代表签名配置成功了，此时就可以将前面在 `gradle.properties` 里添加的 `signingKey` 和 `signingPassword` 删除了。
 
 **记得一定要删除上面添加的测试配置，不要一不小心把私钥和密码推送上仓库了。**
 
