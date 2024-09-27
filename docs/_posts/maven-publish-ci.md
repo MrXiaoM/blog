@@ -26,7 +26,7 @@ tags:
 
 ![](https://pic.imgdb.cn/item/66f65ea8f21886ccc0e230ee.png)
 
-在弹出的窗口中输入账号密码，这里设为 `testgpg1234`，请改为你自己的密码。
+在弹出的窗口中输入该密钥对的密码、确认密码，这里设为 `testgpg1234`，请改为你自己的密码。
 
 ![](https://pic.imgdb.cn/item/66f65ef8f21886ccc0e27dd3.png)
 
