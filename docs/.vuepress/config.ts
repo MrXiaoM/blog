@@ -126,7 +126,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     footer: {
       createYear: 2018, // 博客创建年份
       copyrightInfo:
-        '<a href="https://www.mrxiaom.top">人间工作P</a> | <a href="https://www.mrxiaom.top/#friends">友情链接</a>',
+        '<a href="https://www.mrxiaom.top">人间工作P</a> | <a href="/friends">友情链接</a>',
     },
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
