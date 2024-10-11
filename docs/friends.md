@@ -5,7 +5,7 @@ article: false
 permalink: /friends
 ---
 
-互加友链请联系电子信箱 [mrxiaom@qq.com]，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/friends.md)。
+互加友链请联系电子信箱 [mrxiaom@qq.com](mailto:mrxiaom@qq.com)，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/friends.md)。
 > 必选信息: `名字`, `描述`, `头像`, `链接`  
 > 可选信息: `背景颜色(16进制)`, `文本颜色(16进制)`
 
