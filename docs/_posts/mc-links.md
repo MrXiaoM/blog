@@ -14,8 +14,19 @@ tags:
 这个博文可能是不完善的，之后会补充一些链接。
 
 ## 开发
-
 + [HelpChat: spigot/bukkit javadoc 1.5-最新版](https://helpch.at/docs/)
++ [Minecraft 网络包结构参考，NMS与游戏版本对照表](https://protocol.mcio.dev/versions/)
++ [item-nbt-api 开发文档](https://github.com/tr7zw/Item-NBT-API/wiki)
+
+Minecraft Wiki
++ [数据包 文件夹结构](https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85#%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BB%93%E6%9E%84)
++ [资源包 文件结构](https://zh.minecraft.wiki/w/%E8%B5%84%E6%BA%90%E5%8C%85#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
++ [物品堆叠组件 (1.20.5+)](https://zh.minecraft.wiki/w/%E7%89%A9%E5%93%81%E5%A0%86%E5%8F%A0%E7%BB%84%E4%BB%B6)
++ [物品NBT格式 (1.20.4及以前)](https://zh.minecraft.wiki/w/%E7%89%A9%E5%93%81%E6%A0%BC%E5%BC%8F)
++ [实体数据](https://zh.minecraft.wiki/w/%E5%AE%9E%E4%BD%93)
+
+## 工具
++ [Minecraft 颜色选择器](https://box.mcio.dev/color)
 
 ## 插件
 
