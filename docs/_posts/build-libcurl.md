@@ -31,7 +31,7 @@ curl 的文档又多又杂，读起来挺麻烦的，很多时候不知道该到
 
 ## 编译
 
-执行以下命令即可编译 libcurl
+在**开发者命令提示符**执行以下命令即可编译 libcurl，注意一定要进入**开发者命令提示符**！
 ```shell
 nmake /f Makefile.vc mode=static RTLIBCFG=static VC=17 MACHINE=x64 DEBUG=no
 ```
@@ -66,7 +66,7 @@ builds/libcurl-vc17-x64-release-static-ipv6-sspi-schannel/lib/libcurl_a.lib
 假如编译目录在 `builds/libcurl-vc17-x64-release-static-ipv6-sspi-schannel/`
 
 在项目属性进行如下编辑（添加目录不用那么死板，也可以将文件夹复制到项目目录再操作）
-+ 转到 `C/C++ -> 常规 -> 附加包含目录`，将编译目录中的 `include/curl` 目录添加进去。
++ 转到 `C/C++ -> 常规 -> 附加包含目录`，将编译目录中的 `include` 目录添加进去。
 + 转到 `C/C++ -> 预处理器 -> 预处理器定义`，添加一项 `CURL_STATICLIB`。
 + 转到 `链接器 -> 常规 -> 附加库目录`，将编译目录中的 `lib` 目录添加进去。
 + 转到 `链接器 -> 输入 -> 附加依赖项`，添加一项 `libcurl_a.lib`。
