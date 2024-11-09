@@ -26,7 +26,7 @@ Minecraft Wiki
 + [实体数据](https://zh.minecraft.wiki/w/%E5%AE%9E%E4%BD%93)
 
 ## 工具
-+ [Minecraft 颜色选择器](https://box.mcio.dev/color)
++ [Minecraft 渐变颜色选择器](https://box.mcio.dev/color)
 
 ## 插件
 
