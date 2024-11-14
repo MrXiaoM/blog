@@ -20,6 +20,10 @@ permalink: /inst
 | https://box.mcio.dev/color/ | Minecraft 渐变色选择器 |
 | https://bukkit.mcio.dev/ | Bukkit 项目生成器 (Gradle) |
 | https://static.mcio.dev/ | 为我的一些站点提供部分静态资源 |
+| https://editor.mcio.dev/examples/katex.html | [editor.md](https://github.com/pandao/editor.md) 镜像，改了下默认内容而已 |
+| https://protocol.mcio.dev/ | 随缘更新的 Minecraft 通信协议文档备份 |
+| https://rpgitems.mcio.dev/ | RPGItems-reborn 文档 |
+| https://dennokop.mcio.dev/ | でんの子P 粉丝制作中文站点 |
 
 以下页面已步入生命周期末尾。
 
