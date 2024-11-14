@@ -95,7 +95,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 博主信息 (显示在首页侧边栏)
     blogger: {
-      avatar: 'https://static.mcio.dev/mrxiaom.top/images/avatar-original.jpg',
+      avatar: 'https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg',
       name: '人间工作P',
       slogan: '我每天都好困… 最近在学习和进行 VOCALOID 创作',
     },
