@@ -5,11 +5,11 @@ article: false
 permalink: /friends
 ---
 
-互加友链请联系电子信箱 [mrxiaom@qq.com](mailto:mrxiaom@qq.com)，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/friends.md)。
+互加友链请联系电子信箱 [mrxiaom@qq.com](mailto:mrxiaom@qq.com)，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/@pages/friends.md)。
 
 > 名字: `人间工作P`  
 > 描述: `我每天都好困…`  
-> 头像: `https://static.mcio.dev/mrxiaom.top/images/avatar-original.jpg`  
+> 头像: `https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg`  
 > 链接: `https://producer.mrxiaom.top/`
 
 提交友链申请时，请提供以下信息
