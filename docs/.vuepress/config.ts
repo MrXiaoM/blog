@@ -30,6 +30,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     nav: [
       { text: '主站', link: 'https://www.mrxiaom.top' },
       { text: '首页', link: '/' },
+      { text: '系列', items: [
+        { text: 'Bukkit开发教程', link: '/categories/?category=Bukkit开发教程' }
+      ] },
       { text: '关于', link: '/about' },
       {
         text: '索引',
