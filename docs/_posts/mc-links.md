@@ -17,6 +17,7 @@ tags:
 + [HelpChat: spigot/bukkit javadoc 1.5-最新版](https://helpch.at/docs/)
 + [Minecraft 网络包结构参考，NMS与游戏版本对照表](https://protocol.mcio.dev/versions/)
 + [item-nbt-api 开发文档](https://github.com/tr7zw/Item-NBT-API/wiki)
++ [BungeeCord 插件消息频道](https://mouse0w0.github.io/BungeeCord-CN-Translation/bukkit-bungee-plugin-messaging-channel.html)
 
 Minecraft Wiki
 + [数据包 文件夹结构](https://zh.minecraft.wiki/w/%E6%95%B0%E6%8D%AE%E5%8C%85#%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BB%93%E6%9E%84)
