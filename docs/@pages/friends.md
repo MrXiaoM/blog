@@ -41,5 +41,12 @@ permalink: /friends
   bgColor: '#ffe6fa'
   textColor: '#333333'
 
+- name: r1a dev
+  desc: r1a的开发记录/博客
+  avatar: https://r1a.rr.nu/favicon.webp
+  link: https://r1a.rr.nu
+  bgColor: '#eeeeee'
+  textColor: '#383838'
+
 ```
 :::
