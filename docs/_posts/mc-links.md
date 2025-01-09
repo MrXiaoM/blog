@@ -42,3 +42,4 @@ Minecraft Wiki
 | PlaceholderAPI | [SpigotMC](https://www.spigotmc.org/resources/6245/), [变量扩展下载](https://api.extendedclip.com/all/) |
 | TAB | [SpigotMC](https://www.spigotmc.org/resources/57806/), [官方文档](https://github.com/NEZNAMY/TAB/wiki) |
 | EcoEnchants | [SpigotMC](https://www.spigotmc.org/resources/79573/), [官方文档](https://plugins.auxilor.io/ecoenchants) |
+| MyWorlds | [SpigotMC](https://www.spigotmc.org/resources/39594/)，[官方文档](https://wiki.traincarts.net/p/MyWorlds/zh-cn) |
