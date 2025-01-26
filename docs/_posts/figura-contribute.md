@@ -32,9 +32,22 @@ https://github.com/MrXiaoM/FiguraLambda/compare/${branch}...MrXiaoM:FiguraLambda
 > 如果有条件的话，应该遵守就近原则，不要一下跳一个大版本，比如从 1.20.4 直接到 1.21.4，或者从 1.20.4 直接到 1.18.2，就是跳大版本。  
 > 先从 1.20.4 升到 1.20.6，再以此为基础升 1.21，再升 1.21.4，这样会更平滑一点，不容易在做版本兼容的时候犯迷糊。但是这非常耗时间。  
 
+
 ## 没有写权限
 
-fork 这个仓库，使用 [Github Desktop](https://desktop.github.com/) 打开仓库，基于你需要的分支 (`1.20.6`) 创建一个 `merge_changes` 分支（或者你想起什么就起什么，别重复就行。或者反正你是 fork 的，不创建分支也行，直接使用 `1.20.6` 分支，但不太推荐这么做）
+fork 这个仓库，使用 [Github Desktop](https://desktop.github.com/) 打开仓库。
+
+因为 Figura 的基础分支是 `1.20`，我强行改成了 `1.20.4`。如果想合并到低于 `1.20.4` 版本的分支，分支比较页面会显示一些不属于我的提交。
+
+![](https://pic1.imgdb.cn/item/6795cc27d0e0a243d4f80867.png)
+
+这时候就不能用下面的 `Create a merge commit` 方法了，直接 merge 只是图省事。这时候只能切换到 `1.20.4` 分支，从 `allow uuid v3` 这个 commit 开始，按 Ctrl 选中所有我提交上去的 commit，然后右键，`Cheery-pick xx commits`，然后选中目标分支，比如 `1.20`，合并后解决冲突，再测试。
+
+![](https://pic1.imgdb.cn/item/6795daaad0e0a243d4f80b7c.png)
+
+![](https://pic1.imgdb.cn/item/6795daaad0e0a243d4f80b7d.png)
+
+如果第一步打开的页面没有多余的 commit，基于你需要的分支 (`1.20.6`) 创建一个 `merge_changes` 分支（或者你想起什么就起什么，别重复就行。或者反正你是 fork 的，不创建分支也行，直接使用 `1.20.6` 分支，但不太推荐这么做）
 
 ![](https://pic1.imgdb.cn/item/679507d9d0e0a243d4f7f677.png)
 
