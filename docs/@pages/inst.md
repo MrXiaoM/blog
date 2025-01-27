@@ -24,6 +24,7 @@ permalink: /inst
 | [https://protocol.mcio.dev/](https://protocol.mcio.dev/) | 随缘更新的 Minecraft 通信协议文档备份 |
 | [https://rpgitems.mcio.dev/](https://rpgitems.mcio.dev/) | RPGItems-reborn 文档 |
 | [https://dennokop.mcio.dev/](https://dennokop.mcio.dev/) | でんの子P 粉丝制作中文站点 |
+| [https://plugins.mcio.dev/](https://plugins.mcio.dev/) | 我的插件文档 |
 
 以下页面已步入生命周期末尾。
 
