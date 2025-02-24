@@ -60,3 +60,18 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  baidu-push:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+      - name: 'Run baiduPush'
+        run: |
+          cd vdoing
+          npm pack
+          cd ..
+          npm install && npm run baiduPush
