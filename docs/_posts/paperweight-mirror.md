@@ -53,3 +53,25 @@ paperweight {
     // ...
 }
 ```
+
+## 无脑方法
+
+改成这样，在中国大陆地区运行，才会使用加速服务。可以很方便地在本机编译或者在 Github Actions 编译而不影响速度。
+
+```kotlin
+fun io.papermc.paperweight.patcher.upstream.RepoPatcherUpstream.decideUseMirror() {
+    if (Locale.getDefault().country == "CN") {
+        val github = url.get()
+        url.set("https://github.moeyy.xyz/$github")
+    }
+}
+
+paperweight {
+    // ...
+
+    // 找到 usePaperUpstream
+    usePaperUpstream(providers.gradleProperty("paperCommit")) {
+        decideUseMirror()
+    }
+}
+```
