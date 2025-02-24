@@ -20,10 +20,10 @@ permalink: /friends
 ::: cardList
 ```yaml
 
-- name: SweetRice 甜米
+- name: NeoWorld 新世界
   desc: 在奇妙的世界展开冒险
-  avatar: https://docs.pds.ink/images/logo.png
-  link: https://www.pds.ink/
+  avatar: https://www.mcio.dev/logo.png
+  link: https://www.mcio.dev/
   bgColor: '#0e1630'
   textColor: '#a399fa'
 
