@@ -25,6 +25,7 @@ permalink: /inst
 | [https://rpgitems.mcio.dev/](https://rpgitems.mcio.dev/) | RPGItems-reborn 文档 |
 | [https://dennokop.mcio.dev/](https://dennokop.mcio.dev/) | でんの子P 粉丝制作中文站点 |
 | [https://plugins.mcio.dev/](https://plugins.mcio.dev/) | 我的插件文档 |
+| [https://javadoc.mcio.dev/](https://javadoc.mcio.dev/) | spigot-api 和 paper-api 的 javadoc |
 
 以下页面已步入生命周期末尾。
 
