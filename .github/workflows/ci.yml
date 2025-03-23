@@ -36,9 +36,6 @@ jobs:
           node-version: '18.x'
       - name: Build
         run: |
-          cd vdoing
-          npm pack
-          cd ..
           yarn
           yarn build
       - name: Upload artifact
@@ -66,8 +63,4 @@ jobs:
         with:
           fetch-depth: 0
       - name: 'Run baiduPush'
-        run: |
-          cd vdoing
-          npm pack
-          cd ..
-          npm install && npm run baiduPush
+        run: npm install && npm run baiduPush
