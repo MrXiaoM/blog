@@ -48,5 +48,12 @@ permalink: /friends
   bgColor: '#eeeeee'
   textColor: '#383838'
 
+- name: 雨云 rainyun
+  desc: 使用优惠码 uwu 注册或购买，即可支持我
+  avatar: https://pic1.imgdb.cn/item/67dfd05f88c538a9b5c511dc.png
+  link: https://www.rainyun.com/uwu_
+  bgColor: '#f8f8f8'
+  textColor: '#77bec9'
+
 ```
 :::
