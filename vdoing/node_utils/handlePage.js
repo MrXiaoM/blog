@@ -40,8 +40,8 @@ article: false
   } else if (page.indexOf('archives') > -1) {
     content = `---
 archivesPage: true
-title: 归档
-permalink: /archives/
+title: 时间线
+permalink: /timeline/
 article: false
 ---`
   }

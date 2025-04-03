@@ -1,6 +1,6 @@
 ---
 archivesPage: true
-title: 归档
-permalink: /archives/
+title: 时间线
+permalink: /timeline/
 article: false
 ---
