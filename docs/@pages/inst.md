@@ -1,6 +1,7 @@
 ---
 title: 互联网实例
 description: 我的所有部署在互联网上的站点
+showPost: false
 sidebar: false
 article: true
 permalink: /inst

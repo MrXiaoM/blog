@@ -3,11 +3,12 @@ title: 构建 Paper 衍生服务端（Purpur、Folia 等）时使用代理避免
 date: 2025-02-24 13:18:26
 permalink: /post/paperweight-mirror
 description: 构建 Folia 偶遇 paperweight，拼尽全力无法拉取仓库
-categories:
+categories: 
   - Minecraft
-tags:
+tags: 
   - Paper
   - Gradle
+sidebar: auto
 ---
 
 

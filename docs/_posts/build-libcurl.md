@@ -3,11 +3,12 @@ title: Windows 下编译 libcurl 全流程
 date: 2024-11-09 16:47:04
 permalink: /post/build-libcurl
 description: 文档好多好杂，看不过来
-categories:
+categories: 
   - C
-tags:
+tags: 
   - C语言
   - Windows
+sidebar: auto
 ---
 
 ## 前言

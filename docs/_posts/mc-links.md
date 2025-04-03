@@ -3,10 +3,11 @@ title: MC服务端插件文档收藏夹
 date: 2024-10-25 03:12:20
 permalink: /post/mc-links
 description: 存放一些文档链接
-categories:
+categories: 
   - Minecraft
-tags:
+tags: 
   - 网站
+sidebar: auto
 ---
 
 做 mc 服务器经常需要找文档，去官方帖子挺麻烦，特别是有时候还卡 SpigotMC 的 Cloudflare 人机验证很烦。于是我打算整理下各个文档的链接，免得到时到处找。

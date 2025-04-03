@@ -3,9 +3,9 @@ title: 使用 Github Actions 工作流发布包到 Maven 仓库
 date: 2024-09-27 16:30:20
 permalink: /post/maven-publish-ci
 description: 基于 Gradle 的一键发布工作流配置教程
-categories:
+categories: 
   - Gradle
-tags:
+tags: 
   - 网络
   - 编程
   - 自动构建
@@ -15,6 +15,7 @@ tags:
   - Maven
   - Gradle
   - GPG
+sidebar: auto
 ---
 
 首先我们默认你已经搞定了 Maven 仓库的账号密码等等。我们从 GPG 签名开始

@@ -3,12 +3,13 @@ title: 关于实时接收PC微信消息的研究
 date: 2024-10-06 21:21:43
 permalink: /post/wechat-message-hook
 description: 从前人的研究入手，尝试实现读取微信接收消息
-categories:
+categories: 
   - 逆向
-tags:
+tags: 
   - 微信
   - WeChat
   - Hook
+sidebar: auto
 ---
 
 ## 前言

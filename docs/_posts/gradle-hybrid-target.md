@@ -3,11 +3,12 @@ title: Gradle 杂交不同编译目标（Java）的模块到一个jar
 date: 2025-01-29 12:14:11
 permalink: /post/gradle-hybrid-target
 description: 多个 Java 版本目标的模块，合并到一个jar
-categories:
+categories: 
   - Gradle
-tags:
+tags: 
   - 编程
   - Gradle
+sidebar: auto
 ---
 
 在制作 FiguraAuthProvider 的时候遇到的问题。

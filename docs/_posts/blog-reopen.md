@@ -3,11 +3,12 @@ title: 关于我的博客的重新开放
 date: 2024-09-27 18:00:20
 permalink: /post/blog-reopen
 description: 讲一点自己的心得
-categories:
+categories: 
   - 日常
-tags:
+tags: 
   - 网站
   - vuepress
+sidebar: auto
 ---
 
 我高中的时候也开过个人博客，也写一点东西发布出来。

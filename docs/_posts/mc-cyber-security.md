@@ -3,10 +3,11 @@ title: 关于 Minecraft 服务器安全防护建议
 date: 2025-01-13 14:48:32
 permalink: /post/mc-cyber-security
 description: 开服两年以来的安全经验总结
-categories:
+categories: 
   - Minecraft
-tags:
+tags: 
   - 网络
+sidebar: auto
 ---
 
 DDoS 防护方面已在我的[上一篇博文](https://producer.mrxiaom.top/post/mc-ddos)中进行过讲解，在此不过多讲述。  

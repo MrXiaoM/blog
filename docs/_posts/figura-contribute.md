@@ -2,16 +2,17 @@
 title: FiguraLambda 的版本兼容说明
 date: 2025-01-26 02:02:53
 permalink: /post/figura-contribute
-description: 
-categories:
+description: null
+categories: 
   - Minecraft
-tags:
+tags: 
   - 我的世界
   - Minecraft
   - Mod
   - Forge
   - Fabric
   - NeoForged
+sidebar: auto
 ---
 
 仓库：https://github.com/MrXiaoM/FiguraLambda
