@@ -111,7 +111,7 @@
 
     <MainLayout>
       <template #mainLeft>
-        <Content v-if="homeData.contentAsFooter !== true" class="theme-vdoing-content custom card-box" />
+        <Content v-if="showBanner && homeData.contentAsFooter !== true" class="theme-vdoing-content custom card-box" />
 
         <!-- 简约版文章列表 -->
         <UpdateArticle
