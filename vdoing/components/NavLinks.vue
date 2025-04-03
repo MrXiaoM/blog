@@ -20,16 +20,15 @@
     </div>
 
     <!-- repo link -->
+     <div class="nav-item">
     <a
       v-if="repoLink"
       :href="repoLink"
-      class="repo-link"
+      class="repo-link iconfont icon-github"
       target="_blank"
       rel="noopener noreferrer"
     >
-      {{ repoLabel }}
-      <OutboundLink />
-    </a>
+    </a></div>
   </nav>
 </template>
 
@@ -94,24 +93,6 @@ export default {
           : `https://github.com/${repo}`
       }
       return null
-    },
-
-    repoLabel () {
-      if (!this.repoLink) return
-      if (this.$site.themeConfig.repoLabel) {
-        return this.$site.themeConfig.repoLabel
-      }
-
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/)[0]
-      const platforms = ['GitHub', 'GitLab', 'Bitbucket']
-      for (let i = 0; i < platforms.length; i++) {
-        const platform = platforms[i]
-        if (new RegExp(platform, 'i').test(repoHost)) {
-          return platform
-        }
-      }
-
-      return 'Source'
     }
   }
 }
@@ -133,7 +114,7 @@ export default {
     &:first-child
       margin-left 0
   .repo-link
-    margin-left 1.5rem
+    font-size: 1.4rem
 // 959
 @media (max-width $MQNarrow)
   .nav-links
