@@ -37,7 +37,7 @@ title: 标签
 permalink: /tags/
 article: false
 ---`
-  } else if (page.indexOf('archives') > -1) {
+  } else if (page.indexOf('timeline') > -1) {
     content = `---
 archivesPage: true
 title: 时间线

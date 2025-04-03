@@ -75,12 +75,12 @@ export interface VdoingThemeConfig extends NoSidebar4DefaultThemeConfig {
   contentBgStyle?: 1 | 2 | 3 | 4 | 5 | 6;
 
   /**
-   * 最近更新栏. showToArticle 是否显示到文章页底部，默认true。 moreArticle “更多文章”跳转的页面，默认'/archives'
-   * @default {showToArticle: true, moreArticle: '/archives'}
+   * 最近更新栏. showToArticle 是否显示到文章页底部，默认true。 moreArticle “更多文章”跳转的页面，默认'/timeline'
+   * @default {showToArticle: true, moreArticle: '/timeline'}
    */
   updateBar?: {
     showToArticle: boolean,
-    moreArticle?: '/archives' | string
+    moreArticle?: '/timeline' | string
   };
 
   /**

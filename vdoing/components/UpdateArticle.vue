@@ -1,7 +1,7 @@
 <template>
   <div :class="['article-list', { 'no-article-list': isShowArticle }]">
     <div class="article-title">
-      <router-link :to="moreArticle || '/archives/'" class="iconfont icon-bi"
+      <router-link :to="moreArticle || '/timeline/'" class="iconfont icon-bi"
         >最近更新</router-link
       >
     </div>
@@ -24,7 +24,7 @@
       <dl>
         <dd></dd>
         <dt>
-          <router-link :to="moreArticle || '/archives/'" class="more"
+          <router-link :to="moreArticle || '/timeline/'" class="more"
             >更多文章></router-link
           >
         </dt>
@@ -60,8 +60,7 @@ export default {
   },
   computed: {
     topPublishPosts() {
-      let sorted = this.home ? this.$sortPostsByDateHome : this.$sortPostsByDate;
-      return this.$sorted ? this.$sorted.filter(post => {
+      return this.$sortPostsByDateHome ? this.$sortPostsByDateHome.filter(post => {
         const { path } = post
         return path !== this.currentPath
       }).slice(0, this.length) : []
