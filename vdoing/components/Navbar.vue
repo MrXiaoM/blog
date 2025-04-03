@@ -27,6 +27,17 @@
       } : {}"
     >
       <NavLinks class="can-hide" />
+      <div
+          class="repo-link"
+        >
+        <a
+          v-if="repoLink"
+          :href="repoLink"
+          class="iconfont icon-github"
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+      </div>
     </div>
   </header>
 </template>
@@ -66,6 +77,15 @@ export default {
 
     isAlgoliaSearch () {
       return false
+    },
+    repoLink () {
+      const { repo } = this.$site.themeConfig
+      if (repo) {
+        return /^https?:/.test(repo)
+          ? repo
+          : `https://github.com/${repo}`
+      }
+      return null
     }
   }
 }
@@ -109,6 +129,12 @@ $navbar-horizontal-padding = 1.5rem
     .search-box
       flex 0 0 auto
       vertical-align top
+    .repo-link
+      padding-left 1rem
+      box-sizing border-box
+      a
+        font-size: 2.2rem
+        color: $textColor
 .hide-navbar
   .navbar
     transform translateY(-100%)

@@ -1,7 +1,7 @@
 <template>
   <nav
     class="nav-links"
-    v-if="userLinks.length || repoLink"
+    v-if="userLinks.length"
   >
     <!-- user links -->
     <div
@@ -18,17 +18,6 @@
         :item="item"
       />
     </div>
-
-    <!-- repo link -->
-     <div class="nav-item">
-    <a
-      v-if="repoLink"
-      :href="repoLink"
-      class="repo-link iconfont icon-github"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-    </a></div>
   </nav>
 </template>
 
@@ -83,16 +72,6 @@ export default {
           items: (link.items || []).map(resolveNavLinkItem)
         })
       })
-    },
-
-    repoLink () {
-      const { repo } = this.$site.themeConfig
-      if (repo) {
-        return /^https?:/.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-      }
-      return null
     }
   }
 }
@@ -113,8 +92,6 @@ export default {
     line-height 2rem
     &:first-child
       margin-left 0
-  .repo-link
-    font-size: 1.4rem
 // 959
 @media (max-width $MQNarrow)
   .nav-links
