@@ -134,10 +134,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
-      author: {
-        name: 'MrXiaoM',
-        link: 'https://www.mrxiaom.top'
-      }
+      // author: {
+      //   name: 'MrXiaoM',
+      //   link: 'https://www.mrxiaom.top'
+      // }
     },
 
     // 自定义hmtl(广告)模块
