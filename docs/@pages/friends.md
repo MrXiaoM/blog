@@ -55,5 +55,12 @@ permalink: /friends
   bgColor: '#f8f8f8'
   textColor: '#77bec9'
 
+- name: PuddingKC's Blog
+  desc: 愿你所热爱的依旧不减当年。
+  avatar: https://pic1.imgdb.cn/item/67ee9aa70ba3d5a1d7ec426d.webp
+  link: https://www.puddingkc.com/
+  bgColor: '#1f1f20'
+  textColor: '#fbe6b3'
+
 ```
 :::
