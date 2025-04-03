@@ -111,6 +111,8 @@
 
     <MainLayout>
       <template #mainLeft>
+        <Content v-if="homeData.contentAsFooter !== true" class="theme-vdoing-content custom card-box" />
+
         <!-- 简约版文章列表 -->
         <UpdateArticle
           class="card-box"
@@ -136,7 +138,7 @@
           />
         </template>
 
-        <Content class="theme-vdoing-content custom card-box" />
+        <Content v-if="homeData.contentAsFooter === true" class="theme-vdoing-content custom card-box" />
       </template>
 
       <template v-if="!homeData.hideRightBar" #mainRight>
@@ -481,7 +483,7 @@ export default {
         overflow hidden
         border none
         &>:first-child
-          padding-top 2rem
+          padding-top 1rem
         &>:last-child
           padding-bottom 2rem
     .main-right

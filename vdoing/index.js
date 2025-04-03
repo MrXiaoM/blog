@@ -117,6 +117,15 @@ module.exports = (options, ctx) => {
           '/en/': 'DETAILS'
         }
       }],
+      ['container', {
+        type: 'detail',
+        before: info => `<details class="custom-block details details1">${info ? `<summary>${info}</summary>` : ''}\n`,
+        after: () => '</details>\n',
+        defaultTitle: {
+          '/': '点击查看',
+          '/en/': 'DETAILS'
+        }
+      }],
 
       // 内容居中容器
       ['container', {
