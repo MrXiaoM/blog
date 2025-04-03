@@ -115,7 +115,7 @@ $navbar-horizontal-padding = 1.5rem
   .site-name
     font-size 1.3rem
     font-weight 600
-    color var(--textColor)
+    color var(--textLightenColor);
     position relative
   .links
     padding-left 1.5rem
@@ -134,7 +134,7 @@ $navbar-horizontal-padding = 1.5rem
       box-sizing border-box
       a
         font-size: 2.2rem
-        color: $textColor
+        color: var(--textColor)
 .hide-navbar
   .navbar
     transform translateY(-100%)
