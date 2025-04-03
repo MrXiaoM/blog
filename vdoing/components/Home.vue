@@ -116,6 +116,7 @@
           class="card-box"
           v-if="homeData.postList === 'simple'"
           :length="homeData.simplePostListLength || 10"
+          :home="true"
           :moreArticle="
             $themeConfig.updateBar && $themeConfig.updateBar.moreArticle
           "
@@ -125,7 +126,7 @@
         <template
           v-else-if="!homeData.postList || homeData.postList === 'detailed'"
         >
-          <PostList :currentPage="currentPage" :perPage="perPage" />
+          <PostList :home="true" :currentPage="currentPage" :perPage="perPage" />
           <Pagination
             :total="total"
             :perPage="perPage"

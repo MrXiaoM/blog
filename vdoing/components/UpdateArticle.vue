@@ -42,6 +42,10 @@ export default {
       type: [String, Number],
       default: 3
     },
+    home: {
+      type: Boolean,
+      default: false
+    },
     moreArticle: String
   },
   data() {
@@ -56,7 +60,8 @@ export default {
   },
   computed: {
     topPublishPosts() {
-      return this.$sortPostsByDate ? this.$sortPostsByDate.filter(post => {
+      let sorted = this.home ? this.$sortPostsByDateHome : this.$sortPostsByDate;
+      return this.$sorted ? this.$sorted.filter(post => {
         const { path } = post
         return path !== this.currentPath
       }).slice(0, this.length) : []

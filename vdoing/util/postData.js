@@ -3,13 +3,21 @@ import { type, compareDate } from './index'
 /**
  * 过滤非文章页
  * @param {Array} posts 所有文章数据
+ * @param {Boolean} isHome 是否在主页
  */
-export function filterPosts (posts) {
+export function filterPosts (posts, isHome) {
   posts = posts.filter(item => {
     const { frontmatter: { pageComponent, article, home } } = item
     return !(pageComponent || article === false || home === true) // 存在页面组件、article字段为false，以及首页
   })
-  return posts
+  if (isHome) {
+    return posts.filter(item => {
+      const { frontmatter: { showPost } } = item
+      return !(showPost === false)
+    })
+  } else {
+    return posts
+  }
 }
 
 /**

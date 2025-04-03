@@ -106,6 +106,10 @@ export default {
     perPage: {
       type: Number,
       default: 10
+    },
+    home: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -140,6 +144,9 @@ export default {
     },
     tag() {
       this.setPosts()
+    },
+    home() {
+      this.setPosts()
     }
   },
   methods: {
@@ -152,6 +159,8 @@ export default {
         posts = this.$groupPosts.categories[this.category]
       } else if (this.tag) {
         posts = this.$groupPosts.tags[this.tag]
+      } else if (this.home) {
+        posts = this.$sortPostsHome
       } else {
         posts = this.$sortPosts
       }
