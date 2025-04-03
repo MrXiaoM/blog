@@ -16,7 +16,7 @@
               }}</span>
             </router-link>
           </h2>
-          <span>
+          <span class="article-description">
             <router-link :to="item.path">
               {{ item.frontmatter.description ? item.frontmatter.description : "" }}
             </router-link>
@@ -224,6 +224,10 @@ export default {
           display block
           @media (max-width $MQMobile)
             font-weight 400
+      .article-description
+        a
+          display inline-block
+          width 100%
       .article-info
         > a, > span
           opacity 0.7
