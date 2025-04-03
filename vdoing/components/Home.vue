@@ -128,6 +128,13 @@
         <template
           v-else-if="!homeData.postList || homeData.postList === 'detailed'"
         >
+          <Pagination
+            :total="total"
+            :perPage="perPage"
+            :currentPage="currentPage"
+            @getCurrentPage="handlePagination"
+            v-show="Math.ceil(total / perPage) > 1"
+          />
           <PostList :home="true" :currentPage="currentPage" :perPage="perPage" />
           <Pagination
             :total="total"
@@ -477,7 +484,8 @@ export default {
       .card-box
         margin-bottom 2rem
       .pagination
-        margin-bottom 3rem
+        margin-top: 1rem
+        margin-bottom: 1rem
       .theme-vdoing-content
         padding 0 2rem
         overflow hidden
