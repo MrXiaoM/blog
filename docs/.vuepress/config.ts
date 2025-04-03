@@ -30,7 +30,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       { text: '关于', link: '/about/' },
       {
         text: '索引',
-        link: '/archives/',
+        link: '/timeline/',
         items: [
           { text: '分类', link: '/categories/' },
           { text: '标签', link: '/tags/' },
