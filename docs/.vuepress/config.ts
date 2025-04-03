@@ -1,12 +1,6 @@
-/**
- * 提示：如您想使用JS版本的配置文件可参考：https://github.com/xugaoyi/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
- */
-import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
 import dayjs from 'dayjs'
-import baiduCode from './config/baiduCode' // 百度统计hm码
-import htmlModules from './config/htmlModules' // 自定义插入的html块
 
 const DOMAIN_NAME = 'producer.mrxiaom.top' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
@@ -140,13 +134,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       // }
     },
 
-    // 自定义hmtl(广告)模块
-    htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
   head: [
-    ['link', { rel: 'icon', href: '/img/favicon.ico' }], //favicons，资源放在public文件夹
+    ['link', { rel: 'icon', href: '/img/favicon.ico' }],
     [
       'meta',
       {
@@ -154,16 +146,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '个人技术博客,技术文档,人间工作P,人间工作,kotlin,java,csharp,c#,python,git,github,markdown',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-o8iMAsmwkT' }], // 百度统计的站长验证（你可以去掉）
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-o8iMAsmwkT' }],
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    // [
-    //   'script',
-    //   {
-    //     'data-ad-client': 'ca-pub-7828333725993554',
-    //     async: 'async',
-    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-    //   },
-    // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
   ],
 
 
@@ -171,18 +155,14 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   plugins: <UserPlugins>[
     [
       "sitemap", // 网站地图
-      {
-        hostname: WEB_SITE,
-      },
+      { hostname: WEB_SITE },
     ],
 
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     [
       'vuepress-plugin-baidu-tongji', // 百度统计
-      {
-        hm: baiduCode,
-      },
+      { hm: '085480db34560857c26ef2d573dbaea8' },
     ],
 
     'tabs',
@@ -206,26 +186,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
-    /*[
-      'vuepress-plugin-comment', // 评论
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
-      },
-    ],*/
+
     [
       '@vuepress/last-updated', // "上次更新"时间格式
       {
@@ -244,6 +205,5 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // 监听文件变化并重新构建
   extraWatchFiles: [
     '.vuepress/config.ts',
-    '.vuepress/config/htmlModules.ts',
   ]
 })
