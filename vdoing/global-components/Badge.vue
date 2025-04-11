@@ -6,6 +6,10 @@ export default {
       type: String,
       default: 'tip'
     },
+    raw: {
+      type: Boolean,
+      default: false
+    },
     text: String,
     vertical: {
       type: String,
@@ -14,7 +18,9 @@ export default {
   },
   render (h, { props, slots }) {
     return h('span', {
-      class: ['badge', props.type],
+      class: props.raw
+        ? ['badge', props.type]
+        : ['badge', 'fixed', props.type],
       style: {
         verticalAlign: props.vertical
       }
@@ -26,13 +32,14 @@ export default {
 <style lang="stylus" scoped>
 .badge
   display inline-block
-  font-size 14px
-  height 18px
-  line-height 18px
   border-radius 3px
   padding 0 6px
   color white
   background-color #42b983
+  &.fixed
+    font-size 14px
+    height 18px
+    line-height 18px
   &.tip, &.green
     background-color #42b983
   &.error
