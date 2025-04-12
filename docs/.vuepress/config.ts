@@ -27,6 +27,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       { text: '系列', items: [
         { text: 'Bukkit开发教程', link: '/categories/?category=Bukkit开发教程&' }
       ] },
+      { text: '投喂', link: '/feedme/' },
       { text: '关于', link: '/about/' },
       {
         text: '索引',
