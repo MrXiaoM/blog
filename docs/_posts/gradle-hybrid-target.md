@@ -21,18 +21,19 @@ sidebar: auto
 
 ```kotlin
 // shadowLink 可以改成你喜欢的任何名称，只要不和原来的冲突就行
-configurations.create("shadowLink")
+val shadowLink = configurations.create("shadowLink")
 
 dependencies {
   //...
   "shadowLink"(project(":velocity"))
+  // 或者这样
+  add("shadowLink", project(":velocity"))
 }
 
 tasks.shadowJar {
-  configurations = listOf(project.configurations.getByName("shadowLink"))
+  configurations = listOf(shadowLink)
   // 如果需要 implementation、shadow 等也要打包，用以下代码更好
-  configurations {
-    add(project.configurations.getByName("shadowLink"))
-  }
+  configurations.add(shadowLink)
+  // 如果你不想创建变量 shadowLink，那么使用 project.configurations.getByName("shadowLink")
 }
 ```
