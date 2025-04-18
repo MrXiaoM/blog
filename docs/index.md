@@ -29,7 +29,7 @@ tagline: 人间工作P的技术与日常分享
   desc: 从零开始的 Minecraft 服务端冒险之旅
   bgColor: '#157BAE'
   textColor: '#ffffff'
-  link: /categories/?category=Bukkit%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B
+  link: /bukkit/
 ```
 :::
 
