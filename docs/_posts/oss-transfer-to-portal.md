@@ -18,6 +18,10 @@ sidebar: auto
 
 很久以前在 jira 申请了 OSSRH 的仓库权限，在 Central Publishing Portal 推出的时候，jira 的申请通道关闭了，当时我感觉新的站点不太好用，就没太多去关注。现在，OSSRH 很快就要停止服务了，不得不去了解如何迁移到 Portal 了。
 
+受影响的仓库有
++ `https://oss.sonatype.org/`
++ `https://s01.oss.sonatype.org/`
+
 Sonatype 提供了 [Portal OSSRH Staging API](https://central.sonatype.org/publish/publish-portal-ossrh-staging-api/)，只要替换仓库地址就能完成迁移。但是会有一点限制，未来也有可能会把这个接口给取消。所以，我们一步到位，直接迁移到 [Portal API](https://central.sonatype.org/publish/publish-portal-gradle/)。
 
 > 想直接上手可以[看看这里](https://github.com/MrXiaoM/Overflow/pull/148/files)。
