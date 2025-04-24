@@ -147,6 +147,10 @@ publishing {
 
 这时，你可以选择点击 `Drop` 丢弃这个提交，或者点击 `Publish` 确认发布。在测试的时候挺方便的，等你测试到显示 `VALIDATED` 再把发布模式改成 `AUTOMATIC` 最合适。
 
+::: tip
+确认发布之后（状态会显示 `PUBLISHING`），大约需要半个小时的时间才能完成发布（完成时的状态为 `PUBLISHED`）。
+:::
+
 ## 基本原理
 
 通过为 Overflow 做 Portal API 发布兼容，特别是阅读上面提到的 [Publishing By Uploading a Bundle](https://central.sonatype.org/publish/publish-portal-upload/) 可以得知，实际上，接口没有多大变化。
