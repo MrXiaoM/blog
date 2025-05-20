@@ -59,6 +59,10 @@ paperweight {
 
 改成这样，在中国大陆地区运行，才会使用加速服务。可以很方便地在本机编译或者在 Github Actions 编译而不影响速度。
 
+
+:::: tabs
+::: tab 1.5.15
+
 ```kotlin
 import java.util.*
 
@@ -80,3 +84,31 @@ paperweight {
     }
 }
 ```
+
+:::
+::: tab 2.0.0-beta.14
+
+```kotlin
+import java.util.*
+
+// ...
+
+fun io.papermc.paperweight.core.extension.UpstreamConfig.decideUseMirror() {
+    if (Locale.getDefault().country == "CN") {
+        val github = repo.get()
+        repo.set("https://github.moeyy.xyz/$github")
+    }
+}
+
+paperweight {
+    // ...
+
+    // 找到 upstreams.xxx
+    upstreams.paper {
+        decideUseMirror()
+    }
+}
+```
+
+:::
+::::
