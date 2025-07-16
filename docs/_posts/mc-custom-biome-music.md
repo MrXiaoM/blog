@@ -78,7 +78,11 @@ sidebar: auto
 
 对于 Spigot 及其衍生服务端，服务器的数据包通常在 `/world/datapacks/bukkit/` 目录里，修改后重启服务器生效。
 
-接下来，我们在 `bukkit` 数据包里添加一个生物群系。先在上述的 `bukkit` 目录里依此创建这些文件夹：`/data/命名空间/worldgen/biome`，我这里命名空间是 `mrxiaom`，所以创建的是 `/data/mrxiaom/worldgen/biome`。再在 `biome` 文件夹里创建一个 json 文件，文件名即生物群系名，我这里使用 `example.json`，写入以下内容。（不同版本的格式各不相同，你可以尝试使用这个[网站](https://misode.github.io/worldgen/biome/)来生成，但这个网站的格式也可能存在问题，需要按实际情况修改。）
+接下来，我们创建一个自定义生物群系，创建文件 `/world/datapacks/bukkit/data/命名空间/worldgen/biome/生物群系名.json`。
+
+我这里命名空间是 `mrxiaom`。生物群系名自定，我这里用 `example`。
+
+所以创建文件 `/world/datapacks/bukkit/data/mrxiaom/worldgen/biome/example.json`，写入以下内容。（不同版本的格式各不相同，你可以尝试使用这个[网站](https://misode.github.io/worldgen/biome/)来生成，但这个网站的格式也可能存在问题，需要按实际情况修改。）
 
 这里以 1.20.4 为例，请将其中的 `block.note_block.imitate.piglin` 替换为之前你使用 `/playsound` 命令测试时的参数。
 ```json
