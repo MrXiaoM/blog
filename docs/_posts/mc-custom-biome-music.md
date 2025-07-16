@@ -22,7 +22,7 @@ sidebar: auto
 先准备好你的音乐，转换成 ogg（用[在线网站](https://www.aconvert.com/cn/audio/mp3-to-ogg/)或者[格式工厂](http://www.pcgeshi.com/download.html)之类的都行），放到资源包里。我这里就放在 `/assets/mrxiaom/sounds/music/lobby.ogg`
 
 :::: tabs
-::: tab 1.19.3 及以后
+::: tab 1.19.3及以后
 在 1.19.3 开始，必须要使用 SOUND_EVENT 固有注册表内的声音事件，才能正常播放背景音乐。
 > 现在 `effects.additions_sound.sound`、`​effects.ambient_sound` 和 `​effects.music.sound` 参数仅接受声音事件，此前可直接接受资源包定义的声音事件引用。—— [Minecraft Wiki](https://zh.minecraft.wiki/w/%E7%94%9F%E7%89%A9%E7%BE%A4%E7%B3%BB%E5%AE%9A%E4%B9%89%E6%A0%BC%E5%BC%8F?variant=zh-cn#%E5%8E%86%E5%8F%B2)
 
@@ -48,7 +48,7 @@ sidebar: auto
 ```
 看看能不能正常播放，可以播放再进行下一步
 :::
-::: tab 1.19.3 以前
+::: tab 1.19.3以前
 在命名空间文件夹内（我这里是 `mrxiaom`）创建一个 `sounds.json` 文件，具体路径是 `/assets/mrxiaom/sounds.json`。
 
 然后写入以下内容即可，需要更多声音事件可自行添加。
