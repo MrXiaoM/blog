@@ -28,6 +28,8 @@ sidebar: auto
 
 所以，现在我们需要找一个可以被替换掉的已注册声音事件。详见我的插件 [SweetSoundReplacer](https://github.com/MrXiaoM/SweetSoundReplacer)，我这里就挑 `block.note_block.imitate.piglin` 这个声音事件来放背景音乐。
 
+如果你是单人解谜地图，或者是无法获得唱片的纯 RPG 服务器，你也可以使用唱片的声音事件 (如 `music_disc.11`) 来存放背景音乐，使用唱片的声音事件在没有安装材质包时，背景音乐会更加自然，而不是循环原版的某个音效。
+
 创建文件 `/assets/minecraft/sounds.json`，并写入以下内容即可，需要覆盖更多声音事件请自行添加。
 ```json
 {
