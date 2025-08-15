@@ -1,6 +1,6 @@
 ---
 title: 如何制定配置单，并购买一台个人电脑 (台式电脑)
-date: 2024-08-15 15:03:26
+date: 2025-08-15 15:03:26
 permalink: /post/buy-a-personal-computer
 description: 最近在存钱打算升级电脑配置，顺便水一篇博客
 categories: 
