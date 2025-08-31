@@ -28,7 +28,7 @@ sidebar: auto
 
 调用格式
 ```
-GET https://weather.cma.cn/api/map/weather/${days}?t={timestamp}
+GET https://weather.cma.cn/api/map/weather/${days}?t=${timestamp}
 
 days - 天数，其中 1 为今天，2 为明天。范围 [1-7]
 timestamp - 当前毫秒时间戳
