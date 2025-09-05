@@ -144,7 +144,7 @@ exit
 + [微信](https://pc.weixin.qq.com/)
 + [企业微信](https://work.weixin.qq.com/#indexDownload)
 + [PeaZip 压缩软件](https://peazip.github.io/peazip-64bit.html)
-+ [PotPlayer 播放器](https://potplayer.org/category-3.html)
++ [PotPlayer 播放器](https://potplayer.tv/?lang=zh_CN)
 
 **较低优先级**
 + [Steam](https://store.steampowered.com/about/)
