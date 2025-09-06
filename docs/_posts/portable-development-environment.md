@@ -45,10 +45,7 @@ sidebar: auto
 
 但是，光有项目是没有什么意义的，Gradle 缓存、本地 Maven 仓库也要移到移动硬盘上才行，不然一换电脑打开项目，就要等好久处理依赖。
 
-我的方案是使用 Maven 配置配合环境变量，将以下文件放到 `.development` 文件夹，然后以管理员权限执行 `link.cmd` 即可
-+ 将 Gradle 缓存目录改到 `移动硬盘:\.development\data\gradle`
-+ 将 Maven 本地仓库改到 `移动硬盘:\.development\data\repository`
-+ (如有必要，可以复制现有的缓存目录、本地仓库到新的路径)
+我的方案是使用 Maven 配置配合环境变量，将**以下文件**放到 `.development` 文件夹，然后以管理员权限执行 `link.cmd` 即可
 
 :::: tabs
 ::: tab link.cmd
@@ -76,6 +73,7 @@ pause>nul
 echo.
 setx "GRADLE_USER_HOME" "%cd%\data\gradle" /M
 setx "MAVEN_LOCAL_REPOSITORY" "%cd%\data\repository" /M
+mkdir "%USERPROFILE%\.m2"
 copy /Y "%cd%\data\settings.xml" "%USERPROFILE%\.m2\settings.xml"
 echo.
 echo.  Done. You can close this window now.
@@ -111,6 +109,11 @@ exit
 :::
 ::::
 
+执行 `link.cmd` 后，会执行以下操作
++ 将 Gradle 缓存目录改到 `移动硬盘:\.development\data\gradle`
++ 将 Maven 本地仓库改到 `移动硬盘:\.development\data\repository`
++ (如有必要，可以复制现有的缓存目录、本地仓库到新的路径)
+
 另外，如果你需要使用 Git，还需要在全局设置配置文件 `C:/Users/用户名/.gitconfig` 添加以下内容：
 ```
 [safe]
@@ -118,7 +121,7 @@ exit
 ```
 简单来说，就是让 Git 别多管闲事，不属于当前用户的文件夹也是安全的。
 
-如果不做这一步，你会在添加原来的仓库文件夹到 Github Desktop 时收到警告，IntelliJ IDEA 的 Git 文件变更高亮显示也不正常。
+如果不做这一步，你会在添加仓库目录到 Github Desktop 时收到警告，IntelliJ IDEA 的 Git 文件变更高亮显示也不正常。
 
 ## 其它实用工具
 
