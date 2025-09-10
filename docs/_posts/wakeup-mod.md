@@ -84,7 +84,7 @@ java -jar apktool_2.12.0.jar decode wakeup-schedule.apk -o wakeup
 然后修改 `./wakeup/values/strings.xml`，在大约 71 行的位置找到 `<string name="app_name">WakeUp课程表</string>`，这是应用名，把 `WakeUp课程表` 改成 `WakeUp Mod` 或者别的什么，与原版作出区别即可。你也可以不改，改了可以避免找小组件的时候傻傻分不清哪个是原版哪个是共存版。
 
 还需要再修改代码中的一些字符串，这些代码是混淆的，但字符串没有混淆，通过 VSCode 搜索以下字符串，自行替换
-+ `content://com.suda.yzune.wakeupschedule.mod.provider`
++ `content://com.suda.yzune.wakeupschedule.provider` (改成与上方 provider 的一致)
 
 > 要改的文件在 `./wakeup/smali_classes3/com/suda/yzune/wakeupschedule/utils/OooOO0.smali`，但不确保新版本还在这个文件，最好自己搜索。
 
