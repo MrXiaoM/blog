@@ -62,6 +62,32 @@ java -jar apktool_2.12.0.jar decode wakeup-schedule.apk -o wakeup
 </FrameLayout>
 ```
 
+## 修改 APP 共存 (可选)
+
+::: tip 提示
+这一步可以不用做，修改包名使得修改后的 APP 可以跟官方版本共存。
+:::
+
+先改 `./wakeup/AndroidManifest.xml`，在第二行将 `package="com.suda.yzune.wakeupschedule"` 替换为 `package="com.suda.yzune.wakeupschedule.mod"`。
+
+还要找到 `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`，将它前面的包名也改一改。还有其它的一些提供器也要改动包名，总结一下就是
++ `com.suda.yzune.wakeupschedule.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`
++ `com.suda.yzune.wakeupschedule.provider`
++ `com.suda.yzune.wakeupschedule.fileprovider`
++ `com.suda.yzune.wakeupschedule.doc_common.fileprovider`
++ `com.suda.yzune.wakeupschedule.AbtestLifeCycleProviderImpl`
++ `com.suda.yzune.wakeupschedule.file.path.share`
++ `com.suda.yzune.wakeupschedule.androidx-startup`
++ `com.suda.yzune.wakeupschedule.rmonitor-installer`
++ `com.suda.yzune.wakeupschedule.matisse.fileprovider`
+
+然后修改 `./wakeup/values/strings.xml`，在大约 71 行的位置找到 `<string name="app_name">WakeUp课程表</string>`，这是应用名，把 `WakeUp课程表` 改成 `WakeUp Mod` 或者别的什么，与原版作出区别即可。你也可以不改，改了可以避免找小组件的时候傻傻分不清哪个是原版哪个是共存版。
+
+还需要再修改代码中的一些字符串，这些代码是混淆的，但字符串没有混淆，通过 VSCode 搜索以下字符串，自行替换
++ `content://com.suda.yzune.wakeupschedule.mod.provider`
+
+> 要改的文件在 `./wakeup/smali_classes3/com/suda/yzune/wakeupschedule/utils/OooOO0.smali`，但不确保新版本还在这个文件，最好自己搜索。
+
 ## 新建签名
 
 ```shell
