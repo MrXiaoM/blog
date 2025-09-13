@@ -82,3 +82,36 @@ compileOnly(group="org.spigotmc", name="spigot-1.7.10", version="dev", ext="8.ja
 compileOnly("org.spigotmc:spigot-1.7.10:dev@8.jar")
 add("compileOnly", "org.spigotmc:spigot-1.7.10:dev@8.jar")
 ```
+
+## 从其它子模块合并源码Jar
+
+我们可以简单地添加以下配置，以便在构建的时候生成 `-sources.jar` 和 `-javadoc.jar`，这也会自动添加到 publishing 配置。
+```kotlin
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+```
+但是有时会出现一种情况，就是一个模块只是为了分享共同接口，没有必要单开一个模块，但是又必须开一个模块，否则会出现循环引用依赖问题。
+
+在发布到 maven 仓库的时候，我想让 `shared` 模块的源代码和 javadoc 都打包到主要模块里面，可以这样做：
+```kotlin
+tasks {
+    // 获取当前模块的 sourcesJar 任务
+    getByName<Jar>(project.sourceSets.main.get().sourcesJarTaskName) {
+        // 将 shared 模块的源码全部加进来
+        from(project(":shared").sourceSets.main.get().allSource)
+    }
+    // 获取当前模块的 javadoc 任务
+    // 之所以不获取 javadocJar，是因为 javadocJar 是没法合并的，只能从生成这块下手    
+    getByName<Javadoc>(sourceSets.main.get().javadocTaskName) {
+        // 获取 shared 模块的 javadoc 任务
+        val task = project(":nms:shared").run {
+            val taskName = this@run.sourceSets.main.get().javadocTaskName
+            this@run.tasks.named<Javadoc>(taskName).get()
+        }
+        // 将 javadoc 任务的源码全部加到当前任务
+        source += task.source
+    }
+}
+```
