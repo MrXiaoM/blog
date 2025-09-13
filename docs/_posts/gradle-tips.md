@@ -106,7 +106,7 @@ tasks {
     // 之所以不获取 javadocJar，是因为 javadocJar 是没法合并的，只能从生成这块下手    
     getByName<Javadoc>(sourceSets.main.get().javadocTaskName) {
         // 获取 shared 模块的 javadoc 任务
-        val task = project(":nms:shared").run {
+        val task = project(":shared").run {
             val taskName = this@run.sourceSets.main.get().javadocTaskName
             this@run.tasks.named<Javadoc>(taskName).get()
         }
