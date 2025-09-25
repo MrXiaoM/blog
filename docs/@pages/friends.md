@@ -62,5 +62,12 @@ permalink: /friends
   bgColor: '#1f1f20'
   textColor: '#fbe6b3'
 
+- name: MCIO Plugins
+  desc: 插件使用与开发文档
+  avatar: https://plugins.mcio.dev/img/logo.png
+  link: https://plugins.mcio.dev/
+  bgColor: '#89262D'
+  textColor: '#f8f8f8'
+
 ```
 :::
