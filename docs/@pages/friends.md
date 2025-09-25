@@ -5,18 +5,6 @@ article: false
 permalink: /friends
 ---
 
-互加友链请联系电子信箱 [mrxiaom@qq.com](mailto:mrxiaom@qq.com)，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/@pages/friends.md)。
-
-> 名字: `人间工作P`  
-> 描述: `我每天都好困…`  
-> 头像: `https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg`  
-> 链接: `https://producer.mrxiaom.top/`
-
-提交友链申请时，请提供以下信息
-
-> 必选信息: `名字`, `描述`, `头像`, `链接`  
-> 可选信息: `背景颜色(16进制)`, `文本颜色(16进制)`
-
 ::: cardList
 ```yaml
 
@@ -70,4 +58,18 @@ permalink: /friends
   textColor: '#f8f8f8'
 
 ```
+:::
+
+互加友链请联系电子信箱 [mrxiaom@qq.com](mailto:mrxiaom@qq.com)，或提交 [Pull Request](https://github.com/MrXiaoM/blog/edit/main/docs/@pages/friends.md)。
+
+> 名字: `人间工作P`  
+> 描述: `我每天都好困…`  
+> 头像: `https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg`  
+> 链接: `https://producer.mrxiaom.top/`
+
+::: tip 提示
+提交友链申请时，请提供以下信息
+
++ 必选信息: `名字`, `描述`, `头像`, `链接`  
++ 可选信息: `背景颜色(16进制)`, `文本颜色(16进制)`
 :::
