@@ -36,7 +36,7 @@ VRChat Companion Creator (VCC) 是上传 VRChat 模型的重要工具，你可�
 
 右上角会显示导出详情，如果你想进一步优化，减少多边形数量，可以拉一下 `Reduce Ploygons` 里面的滑块。
 
-需要注意的是，你需要保证最终 `Polygons` 的值小于 `65535`。
+需要注意的是，你需要保证最终 `Polygons` 的值小于 `65535`，推荐在 `32000` 左右最为合适。
 
 都调整好之后，点击 `Export` 导出，选择 `VRM 0.0`，填写名字和作者，其它的不用填，直接导出。
 
@@ -72,30 +72,40 @@ VRChat Companion Creator (VCC) 是上传 VRChat 模型的重要工具，你可�
 以下操作，如果你没找到选项，请自查是不是插件没装好。
 :::
 
-在工具栏点击 `VRM0 -> Import VRM 0.x...`，选择你在第二步导出的 `.vrm` 模型文件，然后会弹窗让你保存 `.prefeb` 文件。
+可以参考 [VRM Converter for VRChat 的文档](https://qiita.com/100/items/7315fe3a7eb75732ae43)，虽然它是用于 VRChat SDK 2.0 的教程，但也适用于 3.0。
 
-在 `Assets` 文件夹里新建一个文件夹，随便起名，用英文数字就行（例如 `MyAvatar`），将你的 `.prefeb` 文件保存进去。等待一会转换完成后，你的模型就成功导入到 Unity Editor 了。
+在工具栏点击 `VRM0 -> Import VRM 0.x...`，选择你在第二步导出的 `.vrm` 模型文件，然后会弹窗让你保存 `.prefab` 文件。
 
-将刚刚保存的 prefeb 拖动到场景（左上角）中，在工具栏点击 `VRChat SDK -> Show Control Panel`，然后拖到右边把这个窗口给固定好，登录你的 VRChat 账号。场景中在你的 prefeb 被选中的情况下，切换到 Builder 选项卡点击 `Add a VRCAvatarDescriptor`。
+在 `Assets` 文件夹里新建一个文件夹，随便起名，用英文数字就行（例如 `MyAvatar`），将你的 `.prefab` 文件保存进去。等待一会转换完成后，你的模型就成功导入到 Unity Editor 了。
+
+选中你刚刚保存的 `.prefab` 文件，点击 `VRM0 -> Duplicate and Convert for VRChat`，然后在弹出的对话框，
++ Swaying Objects 选择 `Remove Swaying Objects`
+
+再点击 `Duplicate and Convert` 并保存到一个新的 `.prefab` 文件。
+
+将刚刚保存的 prefab 拖动到场景（左上角）中，在工具栏点击 `VRChat SDK -> Show Control Panel`，然后拖到右边把这个窗口给固定好，登录你的 VRChat 账号。场景中在你的 prefab 被选中的情况下，切换到 Builder 选项卡点击 `Add a VRCAvatarDescriptor`。
 
 然后你可以在 `Review Any Alerts` 看到模型当前存在的问题。
 
+![](https://pic1.imgdb.cn/item/68e3799ec5157e1a8859ba0d.png)
+
 ## 优化模型
 
-通常来说，用这个方法导入的模型似乎固定会存在这些性能问题，所以接下来简单地优化一下，让它变成绿模，减轻自己也减轻别人的渲染负担。
+通常来说，用这个方法导入的模型基本不会有性能问题，只要你上一步的 Swaying Objects 没有保留那些骨骼数据。
 
-首先，有显示 Auto Fix 选项的，先点 Auto Fix。
-
-其次，基本就只剩下 `Combine multiple skinned meshes for optimal performace.` 这个问题需要解决了。
-
-在场景中选中你的 prefeb，然后在工具栏点击 `工具(Tools) -> JLChnToZ -> Skinned Mesh Combiner`，再然后点击 `Auto Create`，最后点击 `Combine` 再保存，即可合并这些蒙皮网格。
-
-![](https://pic1.imgdb.cn/item/68dfe13bc5157e1a88547ff6.png)
+如果你的设备没有眼部追踪，可以在场景中选中你的 prefab，在检查器那里，`VRC Avatar Descriptor` 下面把 `Eye Look` 关掉，否则你的模型眼球位置可能会不正常。
 
 ## 上传
 
-VRChat 要求你的账号的信誉等级至少达到蓝色 `New User` 才能构建以及上传模型。可以搜索 [VRChat 信誉等级](https://cn.bing.com/search?q=vrchat%20%E4%BF%A1%E8%AA%89%E7%AD%89%E7%BA%A7) 之类的关键词寻找相关攻略。
+VRChat 要求你的账号的信誉等级至少达到蓝色 `萌新(New User)` 才能构建以及上传模型。可以搜索 [VRChat 信誉等级](https://cn.bing.com/search?q=vrchat%20%E4%BF%A1%E8%AA%89%E7%AD%89%E7%BA%A7) 之类的关键词寻找相关攻略。
 
-简单来说，上游戏先换一个公共模型，在游戏里多到**公共房**社交就能提高信誉等级。
+简单来说，上游戏先换一个公共模型，在游戏里多到**公共房**社交 (互动、聊天、语音) 就能提高信誉等级。
+
+在获得 `萌新(New User)` 信誉等级之后，VRChat 会发一封邮件给你  
+![](https://pic1.imgdb.cn/item/68e353fec5157e1a88599ff4.png)
+
+为方便参考，我大约在 PC 玩了两个小时，在 VR 玩了两个小时，只开过两三次麦克风，steam 统计总共 5.4 小时，就达到了萌新等级。
 
 上传就没什么好说的了，在之前提到的 `Review Any Alerts` 上面有个 `Prepare Your Content`，在里面输入信息，然后再在最后面的 `Build` 进行构建就行了。上传模型需要开 TUN，或者可以安装 [VRChat SDK Patcher](https://docs.vrcd.org.cn/books/all-about-vrchat-sdk-patcher) 来使用系统代理。
+
+如果你的模型多边形数量超过 7500、材质槽位超过 2，不推荐勾选 Android 和 iOS 平台。
