@@ -1,6 +1,6 @@
 ---
 title: 为什么我不喜欢使用 Java 的 .stream() 接口
-date: 2024-10-13 12:33:01
+date: 2025-10-13 12:33:01
 permalink: /post/why-i-do-not-like-stream-api
 description: 主要是因为存在性能问题
 categories:
