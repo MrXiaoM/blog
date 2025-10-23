@@ -40,6 +40,7 @@ Current Thread: Server thread
 		java.base@17.0.16/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
 		java.base@17.0.16/java.util.stream.ReferencePipeline.forEach(Unknown Source)
 		VectorDisplays-plugin-1.0.0.jar//top.mrxiaom.hologram.vector.displays.hologram.AbstractEntity.updateAffectedPlayers(AbstractEntity.java:204)
+// 当时报告只有这一条 Stack，可以间接咬死就是 Steam API 的问题。
 // 剩下的部分不重要
 ```
 
