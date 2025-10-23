@@ -66,9 +66,10 @@ new ArrayList<>(viewers).stream() // 超出可视范围自动销毁实体
 最后，事实证明也的确是因为 Stream API 开销过大，导致主线程卡死。在实体更新这一块，把 Stream API 改成 for 循环就不卡了。
 
 ```java
-// 复制一份 viewers，以免出现并行操作问题 (下面的 removeViewer)
-ArrayList<Player> copyViewers = new ArrayList<>(viewers);
-for (Player player : copyViewers) { // 超出可视范围自动销毁实体
+// toArray() 会复制一份 ArrayList 内部维护的数组，而且执行效率较高
+// 复制一份再遍历，以免出现并行操作问题
+for (Object o : viewers.toArray()) { // 超出可视范围自动销毁实体
+    Player player = (Player) o;
     if (player.isOnline() && (player.getWorld() != this.location.getWorld() || player.getLocation().distance(this.location) > viewDistance)) {
         if (this.renderMode == RenderMode.NEARBY) {
             removeViewer(player);
