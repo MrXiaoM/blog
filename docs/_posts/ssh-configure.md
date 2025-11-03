@@ -29,12 +29,10 @@ sudo apt install openssh-server
 cd ~
 ssh-keygen -t ed25519
 ```
-这里的 `-t` 后面可以选择以下密钥类型: `dsa`, `ecdsa`, `ecdsa-sk`, `ed25519`, `ed25519-sk`, `rsa`
-
+这里的 `-t` 后面可以选择以下密钥类型: `dsa`, `ecdsa`, `ecdsa-sk`, `ed25519`, `ed25519-sk`, `rsa`。  
 建议使用 `ed25519` 或 `rsa`。([参考资料](https://www.cnblogs.com/librarookie/p/15389876.html))
 
-按提示新建密钥之后，进入 `.ssh` 文件夹，将新建的公钥写入成信任的公钥
-
+按提示新建密钥之后，进入 `.ssh` 文件夹，将新建的公钥写入成信任的公钥。  
 注意！这里的文件名取决于**上面用了什么密钥类型**，如果你使用的密钥类型与本文不同，请勿照抄！
 
 ```shell
@@ -43,7 +41,7 @@ touch authorized_keys
 cat id_ed25519.pub >> authorized_keys
 ```
 
-并且需要给予权限相应的权限
+并且需要给予这些文件/文件夹相应的权限
 ```shell
 chmod 600 authorized_keys
 chmod 700 ~/.ssh
