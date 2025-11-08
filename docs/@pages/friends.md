@@ -59,7 +59,7 @@ permalink: /friends
 
 - name: ZXBHELLO
   desc: 这个类人比你懒，什么也没留下....吗?
-  avatar: https://github.com/ZXBHELLO.png
+  avatar: https://pic1.imgdb.cn/item/690f75f93203f7be00e54db4.jpg
   link: https://doc.zxbhello.top/
   bgColor: '#eff6fd'
   textColor: '#2196f3'
