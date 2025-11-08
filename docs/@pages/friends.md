@@ -57,6 +57,13 @@ permalink: /friends
   bgColor: '#89262D'
   textColor: '#f8f8f8'
 
+- name: ZXBHELLO
+  desc: 这个类人比你懒，什么也没留下....吗?
+  avatar: https://pic1.imgdb.cn/item/690f75f93203f7be00e54db4.jpg
+  link: https://doc.zxbhello.top/
+  bgColor: '#eff6fd'
+  textColor: '#2196f3'
+
 ```
 :::
 
