@@ -14,6 +14,8 @@ tags:
 sidebar: auto
 ---
 
+![](https://pic1.imgdb.cn/item/6921e4573203f7be0021f926.webp)
+
 近期我打算在B站[直播写代码](http://live.bilibili.com/14365466)，于是顺便在博客分享一下我的直播设备架构。
 
 ## 设备拓补
