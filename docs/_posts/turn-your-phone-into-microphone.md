@@ -1,6 +1,6 @@
 ---
 title: 将你的闲置手机变成麦克风
-date: 2024-11-23 00:27:15
+date: 2025-11-23 00:27:15
 permalink: /post/turn-your-phone-into-microphone
 description: 手机音质也是挺好的，省一点钱
 categories: 
