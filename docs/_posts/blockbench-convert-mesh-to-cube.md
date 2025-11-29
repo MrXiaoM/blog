@@ -16,6 +16,8 @@ sidebar: auto
 
 这件事要从《半条命》，或者说《半衰期》这部作品说起。我是在 24 年，也就是《Half-Life 2》二十周年庆入坑的，后劲的确很大，我也庆幸我入坑得晚，不用等十几年还在骂G胖为什么还不出 `3`。
 
+![](https://pic1.imgdb.cn/item/692b3152aae9ff4455b2e717.webp)
+
 近期我需要一个 Half Life 风格的医疗包物品模型，放到 Minecraft 里面，于是在一个通用模型网站里搜到了 [hatThing](https://sketchfab.com/hatt_) 大佬的医疗包模型资产。看到那个 `Uploaded with Blockbench` 提示我就觉得稳了，但等我把模型原件下载下来以后才发现，事情没那么简单。
 
 ## mesh 是不能用的
@@ -27,7 +29,7 @@ sidebar: auto
 
 要注意的是，这个插件只支持`通用模型`，先要创建一个通用模型，然后才能在 `文件→导入` 里面看到 `Import glTF Model` 的选项。
 
-![](https://pic1.imgdb.cn/item/692b28e327638c120a3c8a6b.png)
+![](https://pic1.imgdb.cn/item/692b30e6aae9ff4455b2e710.webp)
 
 模型成功导入了，然后当你满怀欣喜地一点一点调好位置，调好缩放，点击转换项目，将其转换为 Java 版方块/物品模型，或者是转换为基岩版模型之后，只剩下纹理了！
 
@@ -39,7 +41,7 @@ sidebar: auto
 
 隐藏所有网格，只看其中的一个网格的时候，发现它们的形状居然是一个长方形？！
 
-![](https://pic1.imgdb.cn/item/692b2f1faae9ff4455b2e6ec.png)
+![](https://pic1.imgdb.cn/item/692b30e6aae9ff4455b2e711.webp)
 
 而且使用 VSCode 编辑保存的 `.bbmodel` 文件，查看一个网格的属性的时候，也是只有8个顶点和12个面（每个面是一个三角形，长方体由十二个面组成是正常的）。
 
@@ -59,7 +61,7 @@ sidebar: auto
 最终成果在我的 [convert-to-cube](https://github.com/MrXiaoM/blockbench/compare/master...MrXiaoM:blockbench:convert-to-cube) 分支这里。
 > 只支持使用 BlockBench 从 cube 转为 mesh 再转回 cube，不保证使用其它建模软件导出的 mesh 也能成功转为 cube。
 
-![](https://pic1.imgdb.cn/item/692b2be7aae9ff4455b2e64e.png)
+![](https://pic1.imgdb.cn/item/692b30e6aae9ff4455b2e70f.webp)
 
 最后，调整一下显示效果，导出就好啦。
 
