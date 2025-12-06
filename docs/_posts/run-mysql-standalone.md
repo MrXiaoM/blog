@@ -85,9 +85,9 @@ bin\mysqld --standalone --console
 然后另开一个 cmd 窗口，执行以下命令修改密码为 `root`：
 
 ```shell
-bin\mysqladmin -u="用户名" -p="旧密码" password "新密码"
+bin\mysqladmin --user="用户名" --password="旧密码" password "新密码"
 # 例如执行
-bin\mysqladmin -u="root" -p="0hIL?H)Yt&rg" password "root"
+bin\mysqladmin --user="root" --password="0hIL?H)Yt&rg" password "root"
 ```
 
 ::: warning
