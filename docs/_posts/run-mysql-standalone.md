@@ -131,8 +131,7 @@ flush privileges;
 
 ```batch
 @echo off
-bin\mysql --standalone --console
-pause
+bin\mysqld --standalone --console
 ```
 
 之后就可以双击 `start.bat` 启动 MySQL 了，可以随开随关。
