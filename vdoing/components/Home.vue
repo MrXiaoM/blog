@@ -1,5 +1,8 @@
 <template>
   <div class="home-wrapper">
+    <div class="background-block" :style="backgroundStyle">
+      <div class="background-bottom"></div>
+    </div>
     <!-- banner块 s -->
     <div
       class="banner"
@@ -109,6 +112,7 @@
     </div>
     <!-- banner块 e -->
 
+    <div class="main-content-box">
     <MainLayout>
       <template #mainLeft>
         <Content v-if="showBanner && homeData.contentAsFooter !== true" class="theme-vdoing-content custom card-box" />
@@ -170,6 +174,7 @@
         ></div>
       </template>
     </MainLayout>
+    </div>
   </div>
 </template>
 
@@ -240,9 +245,16 @@ export default {
       } else if (bannerBg.indexOf('background:') > -1) { // 自定义背景样式
         return bannerBg
       } else if (bannerBg.indexOf('.') > -1) { // 大图
-        return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
+        //return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
+        return ''
       }
-
+    },
+    backgroundStyle() {
+      let bannerBg = this.homeData.bannerBg
+      if (bannerBg.indexOf('.') > -1) {
+        return `background-image: url(${this.$withBase(bannerBg)})`
+      }
+      return ''
     },
     actionLink() {
       return {
@@ -351,6 +363,21 @@ export default {
 
 <style lang="stylus" scoped>
 .home-wrapper
+  .background-block
+    position absolute
+    width 100%
+    min-height 700px
+    background-color: #868686
+    background-position-x center
+    background-position-y bottom
+    background-repeat no-repeat
+    background-size cover
+    .background-bottom
+      position absolute
+      width 100%
+      bottom 0
+      min-height 150px
+      background-image: linear-gradient(0deg, var(--bodyBg) 0 10%, var(--sidebarBg) 30%, rgba(255, 255, 255, 0) 100%);
   .banner
     width 100%
     min-height 450px
@@ -476,10 +503,11 @@ export default {
   // 分页不在第一页时，隐藏banner栏
   .banner.hide-banner
     display none
-    & + .main-wrapper
+    & + .main-content-box
       margin-top: ($navbarHeight + 0.9rem)
+  .main-content-box
+    padding-top 2rem
   .main-wrapper
-    margin-top 2rem
     .main-left
       .card-box
         margin-bottom 2rem
