@@ -36,6 +36,7 @@ jobs:
           node-version: '20.x'
       - name: Build
         run: |
+          yarn add vuepress-theme-vdoing@file:./vdoing/
           yarn
           yarn build
       - name: Upload artifact
