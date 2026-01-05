@@ -504,7 +504,7 @@ export default {
   .banner.hide-banner
     display none
     & + .main-content-box
-      margin-top: ($navbarHeight + 0.9rem)
+      margin-top: ($navbarHeight)
   .main-content-box
     padding-top 2rem
   .main-wrapper
