@@ -551,6 +551,8 @@ export default {
 // 719px以下
 @media (max-width $MQMobile)
   .home-wrapper
+    .background-block
+      min-height 600px
     .banner
       .banner-conent
         .features
@@ -558,6 +560,10 @@ export default {
 // 419px以下
 @media (max-width $MQMobileNarrow)
   .home-wrapper
+    .background-block
+      min-height 450px
+      .background-bottom
+        display none
     .banner-conent
       padding-left 1.5rem
       padding-right 1.5rem
