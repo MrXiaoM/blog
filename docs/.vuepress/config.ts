@@ -1,5 +1,6 @@
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+import MarkdownItTaskLists from 'markdown-it-task-lists'
 import dayjs from 'dayjs'
 
 const DOMAIN_NAME = 'producer.mrxiaom.top' // 域名 (不带https)
@@ -203,6 +204,9 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   markdown: {
     lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
+    extendMarkdown: (md) => { // 添加扩展插件
+      md.use(MarkdownItTaskLists, { label: true, enabled: true})
+    },
   },
 
   // 监听文件变化并重新构建
