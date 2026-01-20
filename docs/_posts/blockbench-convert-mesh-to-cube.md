@@ -60,7 +60,7 @@ sidebar: auto
 
 搞了我几个小时，还开了几个上下文分开修 BUG，才终于成功了。
 
-最终成果在我的 [convert-to-cube](https://github.com/MrXiaoM/blockbench/compare/master...MrXiaoM:blockbench:convert-to-cube) 分支这里。
+最终成果在~~我的 [convert-to-cube](https://github.com/MrXiaoM/blockbench/compare/master...MrXiaoM:blockbench:convert-to-cube) 分支这里~~，现在已经把这个功能包装成了[一个插件](https://github.com/MrXiaoM/blockbench-plugin-convert-mesh-to-cube)，拉取仓库安装本地插件（单 .js 文件）即可。
 > 只支持使用 BlockBench 从 cube 转为 mesh 再转回 cube，不保证使用其它建模软件导出的 mesh 也能成功转为 cube。
 
 ![](https://pic1.imgdb.cn/item/692b30e6aae9ff4455b2e70f.webp)
