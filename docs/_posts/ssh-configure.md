@@ -75,9 +75,13 @@ systemctl restart ssh
 
 保存并连接，输入用户名，应该就可以使用私钥连接到你的 SSH 会话了。
 
-应急地，在 Windows 下也可以使用以下命令连接 ssh
+应急地，在 Windows 下也可以使用以下命令，调整私钥文件的权限并连接 ssh
 ```shell
-ssh -i 私钥路径 用户名@地址
+icacls "私钥路径" /inheritance:r /grant "%username%:F" /grant "Administrators:F" 
+ssh -i 私钥路径 -p 端口 用户名@地址
+
+# 示例
+ssh -i D:/path/to/key -p 22 root@192.168.1.2
 ```
 
 ## 后期修改
