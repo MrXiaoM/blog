@@ -13,6 +13,10 @@ sidebar: auto
 
 因为 MySQL 的 `.msi` 安装包对于某些应用场景来说还是太麻烦了，而且有可能产生非预期结果，所以写一篇配置**可以随时打包带走**的独立版本的教程。
 
+> 这篇教程以 Windows 为主，主要目的是搭建学习环境，比较适合“会重置系统分区的学校微机室”这种环境。  
+> 当然，在 Windows 服务器中作生产用途也是没问题的。  
+> 在 Linux 系统下虽然也能用，不过直接通过 yum/apt/docker 安装会比使用独立版本方便得多。
+
 ## 下载
 
 到 [MySQL 官网](https://www.mysql.com/) 依次点击 `DOWNLOADS`、`MySQL Community (GPL) Downloads`、`MySQL Community Server`，按图中提示进行下载
@@ -135,3 +139,16 @@ bin\mysqld --standalone --console
 ```
 
 之后就可以双击 `start.bat` 启动 MySQL 了，可以随开随关。
+
+## 继续学习
+
+你是 SQL 新手吗？推荐使用以下工具与教程
++ (付费) [Navicat](https://www.navicat.com.cn/) 极其便利的数据库管理工具
++ (免费) [HeidiSQL](https://www.heidisql.com/) 开源的数据库管理工具
+
++ [MySQL - 菜鸟教程](https://www.runoob.com/mysql/mysql-tutorial.html)
++ [MySQL 数据库应用项目教程](https://www.tup.tsinghua.edu.cn/booksCenter/book_07975903.html) `ISBN 978-7-302-50997-4` 清华大学出版社
+
+在 Java 中使用：
++ [Java MYSQL 连接 - 菜鸟教程](https://www.runoob.com/java/java-mysql-connect.html)
++ [HikariCP 连接池](https://github.com/brettwooldridge/HikariCP) 尽管把连接托管给它管理吧
