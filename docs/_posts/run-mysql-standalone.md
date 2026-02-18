@@ -101,7 +101,7 @@ bin\mysqladmin --user="root" --password="0hIL?H)Yt&rg" password "root"
 改好密码后，执行以下命令连接到 mysql 进行测试吧！
 
 ```shell
-bin\mysql -u root
+bin\mysql --port=3306 --user=root -p
 ```
 
 ## 创建用户(可选)
