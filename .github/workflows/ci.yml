@@ -36,6 +36,7 @@ jobs:
           node-version: '20.x'
       - name: Build
         run: |
+          export TZ=Asia/Shanghai
           yarn add vuepress-theme-vdoing@file:./vdoing/
           yarn
           yarn build
