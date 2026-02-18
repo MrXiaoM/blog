@@ -19,4 +19,5 @@ permalink: /feedme
 
 ## 国外
 
-前往 [Paypal](https://www.paypal.com/paypalme/mrxiaom) 向 陈 苼 付款。
+前往 [Paypal](https://www.paypal.com/paypalme/mrxiaom) 向 陈苼 付款。  
+或者购买 [Rewarble](https://skine.com/en-cn/rewarble?utm_source=rewarble.com) 礼品卡发送到邮箱 `coolxiaom95@gmail.com`。
