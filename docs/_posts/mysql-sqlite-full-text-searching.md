@@ -193,7 +193,7 @@ SELECT jieba_dict('/path/to/dict');
 
 ::: tip 踩坑
 `statement` 一关，扩展就不在了，真有你的 SQLite。  
-我专门写了个 [SQLiteLibSimple](https://github.com/MrXiaoM/SweetPlayerMarket/blob/636a8c2cb23721ded72655cb9ff1a2ba20ccd585/src/main/java/top/mrxiaom/sweet/playermarket/database/SQLiteLibSimple.java)，用于将 `libsimple` 加载到 SQLite 扩展，每次需要调用 `search_index` 数据表时都要加载一次，不然你就等着报错吧（`[SQLITE_ERROR] SQL error or missing database (no such tokenizer: simple)`）。
+我专门写了个 [SQLiteLibSimple](https://github.com/MrXiaoM/SweetPlayerMarket/blob/main/src/main/java/top/mrxiaom/sweet/playermarket/database/SQLiteLibSimple.java)，用于将 `libsimple` 加载到 SQLite 扩展，每次需要调用 `search_index` 数据表时都要加载一次，不然你就等着报错吧（`[SQLITE_ERROR] SQL error or missing database (no such tokenizer: simple)`）。
 ::: details 显示/隐藏代码块
 ```java
 private SQLiteLibSimple libSimple;
