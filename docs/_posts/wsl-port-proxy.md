@@ -16,6 +16,20 @@ sidebar: auto
 
 部署一些用于测试的服务的时候可能会用到 WSL，使得子系统与宿主机能够通信是比较重要的。
 
+我在 `%USERPROFILE%/.wslconfig` 的 WSL 配置如下，基本没有改动网络相关配置
+```ini
+[wsl2]
+memory=4GB
+processors=2
+dnsTunneling=true
+firewall=true
+autoProxy=true
+
+[experimental]
+autoMemoryReclaim=gradual
+sparseVhd=true
+```
+
 ## 从 WSL 转发到 Windows
 
 首先在 WSL 执行以下命令，获取其 IP 地址。
