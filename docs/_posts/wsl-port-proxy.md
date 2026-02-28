@@ -52,6 +52,9 @@ cat /etc/resolv.conf | grep nameserver | awk '{ print $2 }'
 ```powershell
 Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -like "*WSL*" } | Select-Object InterfaceAlias, IPAddress
 ```
+
+![](https://pic1.imgdb.cn/item/69a24984ec0a30908d67e786.png)
+
 以下格式作为参考
 + `vEthernet (WSL (Hyper-V firewall))`
 + `vEthernet (WSL)`
