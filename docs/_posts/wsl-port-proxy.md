@@ -26,10 +26,20 @@ ip addr show eth0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1
 
 例如通过 python + FastAPI 编写一个简单的服务接口，通过 WSL 部署在 8000 端口，在浏览器可正常访问。
 
-(可选) 在 CMD 执行以下命令新建端口转发，使得在 Windows 上也能通过 localhost 访问。
-```shell
+::: details (可选) 端口转发
+在 CMD 执行以下命令新建端口转发，使得在 Windows 上也能通过 localhost 访问。
+```batch
 netsh interface portproxy add v4tov4 listenport=端口 listenaddress=0.0.0.0 connectport=端口 connectaddress=上述地址
 ```
+如需删除端口转发，可以使用以下命令
+```batch
+netsh interface portproxy delete v4tov4 listenaddress=0.0.0.0 listenport=端口
+```
+如需查看已建立的端口转发列表
+```batch
+netsh interface portproxy show all
+```
+:::
 
 ## 从 Windows 转发到 WSL
 
