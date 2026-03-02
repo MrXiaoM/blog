@@ -85,6 +85,13 @@ permalink: /friends
   bgColor: '#F6F4FB'
   textColor: '#ad87ed'
 
+- name: 小雨の空间
+  desc: 一个热爱生活、喜欢分享的小可爱～这里记录着我的日常、想法和美好时光。
+  avatar: https://xyqaq.cn/imgs/avg.jpg
+  link: https://xyqaq.cn/
+  bgColor: '#F1F4FE'
+  textColor: '#ff6b9d'
+
 ```
 :::
 
