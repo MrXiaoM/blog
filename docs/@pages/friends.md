@@ -92,6 +92,13 @@ permalink: /friends
   bgColor: '#F1F4FE'
   textColor: '#ff6b9d'
 
+- name: 午夜的个人小站
+  desc: 用代码表达言语的魅力，用代码书写山河的壮丽。
+  avatar: https://www.zeronight.top/upload/qq_head_portrait.png
+  link: https://www.zeronight.top/
+  bgColor: '#F0FFFF'
+  textColor: '#66ccff'
+
 ```
 :::
 
