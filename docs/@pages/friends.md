@@ -31,7 +31,7 @@ permalink: /friends
 
 - name: r1a dev
   desc: r1a的开发记录/博客
-  avatar: https://dev.oneall.eu.org/favicon.webp
+  avatar: https://pic1.imgdb.cn/item/69a51c30985d2a549ff86835.webp
   link: https://blog.oneall.eu.org
   bgColor: '#eeeeee'
   textColor: '#383838'
