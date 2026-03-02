@@ -99,6 +99,13 @@ permalink: /friends
   bgColor: '#F0FFFF'
   textColor: '#66ccff'
 
+- name: L菌の导航站
+  desc: L菌是一只猫猫的可爱网页
+  avatar: https://www.lcatnya.top/favicon.ico
+  link: https://www.lcatnya.top/
+  bgColor: '#D4E4F8'
+  textColor: '#4D1DA3'
+
 ```
 :::
 
