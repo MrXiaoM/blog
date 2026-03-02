@@ -64,6 +64,20 @@ permalink: /friends
   bgColor: '#eff6fd'
   textColor: '#2196f3'
 
+- name: 白鹿原嚒の小破站
+  desc: 偶尔折腾新奇有趣的各类项目，每天和 AI 斗智斗勇以开发网站新功能。
+  avatar: https://blog.blym.top/_astro/avatar.Cbl1KGw__Zky7W6.webp
+  link: https://blym.top/
+  bgColor: '#ECF1DF'
+  textColor: '#697b1a'
+
+- name: 梦涵LOVE
+  desc: 一个一个小涵子的小BLOG，一起来分享生活的小确幸吧~
+  avatar: https://heyuhan.huohuo.ink/upload/%E6%A2%A6%E6%B6%B5LOVE-2.jpg
+  link: https://heyuhan.huohuo.ink/
+  bgColor: '#00C8FF'
+  textColor: '#FFFFFF'
+
 ```
 :::
 
