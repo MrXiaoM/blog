@@ -78,6 +78,13 @@ permalink: /friends
   bgColor: '#00C8FF'
   textColor: '#FFFFFF'
 
+- name: Cryolite 冰晶石
+  desc: 撃っていいのは撃たれる覚悟のあるヤツだけだ。
+  avatar: https://blog.na3alf6.cn/avatar.png
+  link: https://blog.na3alf6.cn/
+  bgColor: '#F6F4FB'
+  textColor: '#ad87ed'
+
 ```
 :::
 
