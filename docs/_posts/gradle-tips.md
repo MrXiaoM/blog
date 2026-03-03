@@ -37,6 +37,32 @@ repositories {
 
 ```
 
+## 忽略 Java 版本需求
+
+```kotlin
+java {
+    disableAutoTargetJvm()
+}
+```
+
+假设你在使用 Java 17 开发项目作为过渡，引用 Java 21 的依赖 `purpur-api:1.21.11`，不忽略依赖的 Java 版本需求就会出问题。
+
+如果不忽略，依赖 `paper-api`、`velocity` 之类使用 Gradle 构建的包的时候，会因为 Gradle 的检查太过严格，出现以下报错
+
+::: details 报错内容
+```
+项目名:main: No matching variant of org.purpurmc.purpur:purpur-api:1.21.11-R0.1-SNAPSHOT was found. The consumer was configured to find a library for use during compile-time, compatible with Java 17, preferably in the form of class files, preferably optimized for standard JVMs, and its dependencies declared externally but:
+  - Variant 'apiElements' capabilities com.destroystokyo.paper:paper-api:1.21.11-R0.1-SNAPSHOT and com.destroystokyo.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and io.papermc.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and org.bukkit:bukkit:1.21.11-R0.1-SNAPSHOT and org.purpurmc.purpur:purpur-api:1.21.11-R0.1-SNAPSHOT and org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT declares a library for use during compile-time, packaged as a jar, and its dependencies declared externally:
+      - Incompatible because this component declares a component, compatible with Java 21 and the consumer needed a component, compatible with Java 17
+  - Variant 'javadocElements' capabilities com.destroystokyo.paper:paper-api:1.21.11-R0.1-SNAPSHOT and com.destroystokyo.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and io.papermc.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and org.bukkit:bukkit:1.21.11-R0.1-SNAPSHOT and org.purpurmc.purpur:purpur-api:1.21.11-R0.1-SNAPSHOT and org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT declares a component for use during runtime, and its dependencies declared externally:
+      - Incompatible because this component declares documentation and the consumer needed a library
+  - Variant 'runtimeElements' capabilities com.destroystokyo.paper:paper-api:1.21.11-R0.1-SNAPSHOT and com.destroystokyo.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and io.papermc.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and org.bukkit:bukkit:1.21.11-R0.1-SNAPSHOT and org.purpurmc.purpur:purpur-api:1.21.11-R0.1-SNAPSHOT and org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT declares a library for use during runtime, packaged as a jar, and its dependencies declared externally:
+      - Incompatible because this component declares a component, compatible with Java 21 and the consumer needed a component, compatible with Java 17
+  - Variant 'sourcesElements' capabilities com.destroystokyo.paper:paper-api:1.21.11-R0.1-SNAPSHOT and com.destroystokyo.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and io.papermc.paper:paper-mojangapi:1.21.11-R0.1-SNAPSHOT and org.bukkit:bukkit:1.21.11-R0.1-SNAPSHOT and org.purpurmc.purpur:purpur-api:1.21.11-R0.1-SNAPSHOT and org.spigotmc:spigot-api:1.21.11-R0.1-SNAPSHOT declares a component for use during runtime, and its dependencies declared externally:
+      - Incompatible because this component declares documentation and the consumer needed a library
+```
+:::
+
 ## 依赖添加
 
 实际上，依赖可以使用以下三种格式
