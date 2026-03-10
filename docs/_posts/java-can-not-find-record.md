@@ -2,7 +2,7 @@
 title: 关于 找不到java.lang.Record的类文件 的解决方案
 date: 2026-03-07 21:05:40
 permalink: /post/java-can-not-find-record
-description: Java 8 引用高版本依赖的解决方案
+description: Java 8 引用高版本依赖，提示 无法访问Record 的解决方案
 categories: 
   - 开发
 tags: 
@@ -21,6 +21,8 @@ java {
     disableAutoTargetJvm()
 }
 ```
+
+> 即使你要编译目标版本为 `8`，也要用 JDK 21 来运行。旧版本不认识新版本的字节码格式，检测到版本太高就会拒绝读取并报错。所以一定要用 JDK 21 来编译，不管你的目标编译版本是多少。
 
 当然，你点进来这篇文章肯定不是为了看这个的，最主要的问题在下面。
 
