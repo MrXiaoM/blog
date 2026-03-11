@@ -34,6 +34,8 @@ sudo sed -i "s@http://.*archive.ubuntu.com@https://mirrors.sustech.edu.cn@g" /et
 sudo sed -i "s@http://.*security.ubuntu.com@https://mirrors.sustech.edu.cn@g" /etc/apt/sources.list.d/ubuntu.sources
 sudo apt-get update
 ```
+> ![](https://pic1.imgdb.cn/item/69b1126aad79459fdc9e2a1a.png)  
+> SUSTech, sus
 
 ## 安装 Docker + Docker-Compose
 
