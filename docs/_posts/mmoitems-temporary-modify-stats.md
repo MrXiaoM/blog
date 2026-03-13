@@ -2,7 +2,7 @@
 title: 临时修改 MMOItems 的数值属性，实现不同玩家不同属性功能
 date: 2026-03-13 08:00:49
 permalink: /post/mmoitems-temporary-modify-stats
-description: 
+description: 不修改物品的情况下，修改应用给玩家的物品属性值
 categories: 
   - Minecraft
   - 开发
