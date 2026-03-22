@@ -9,11 +9,13 @@ permalink: /feedme
 
 ## 国内
 
-通过微信/支付宝/爱发电对我进行直接支持。
+通过 **微信/支付宝** 对我进行直接支持。
 
-![二维码](/img/feed.jpg)
+![二维码](https://static.mcio.dev/mrxiaom.top/images/feed.webp)
 
-<iframe src="https://afdian.com/leaflet?slug=mrxiaom" width="100%" scrolling="no" height="200" frameborder="0"></iframe>
+通过 **爱发电** 对我进行支持。
+
+<iframe src="https://ifdian.net/leaflet?slug=mrxiaom" width="100%" scrolling="no" height="200" frameborder="0"></iframe>
 
 通过[雨云](https://www.rainyun.com/uwu_)优惠码`uwu`对我进行间接支持。
 
