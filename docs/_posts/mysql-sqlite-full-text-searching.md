@@ -155,6 +155,11 @@ SELECT * FROM `select_index` WHERE `content` MATCH '教程';
 
 ### 添加分词器扩展
 
+::: warning 注意
+鉴于 SQLite 对于 Java 扩展不友好，如果环境复杂，分词器扩展可能会导致 JVM 崩溃！  
+不推荐在 Minecraft 服务器环境使用。
+:::
+
 正如前面所说，SQLite 的 FTS5 默认 tokenizer 是不支持中文的，导致无法通过中文关键词搜索，所以我们需要添加分词器扩展。
 
 首先需要添加参数，让 SQLite 支持加载扩展
