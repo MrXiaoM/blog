@@ -1,5 +1,5 @@
 ---
-title: 使用 HAProxy 转发来自不同域名的地址到不同服务器
+title: 使用 HAProxy 转发来自不同域名的地址到不同的 Minecraft 服务器
 date: 2026-04-03 10:46:11
 permalink: /post/minecraft-haproxy-redirect-by-domain
 description: 节省反向代理节点数量，像 WEB 一样根据域名来转发流量
@@ -66,9 +66,9 @@ systemctl restart haproxy
 
 你点进这篇文章肯定不是想看上面这个这么简单的配置的，以下方案由 Claude 生成，目前测试可用。
 
-按 Claude 的说法，需要解析 Minecraft 客户端握手包，获取发送过来的服务器地址，判定客户端要连接到服务器地址来使用不同的后端。
+按 Claude 的说法，需要解析 Minecraft 客户端握手包，获取发送过来的服务器地址，判定客户端要连接到服务器的地址来使用不同的后端。
 
-HAProxy 并没有 Minecraft 握手包协议支持，所以需要自行实现解析握手包功能，先写一个 lua 脚本用于解析握手包：
+HAProxy 并没有 Minecraft 客户端握手包协议支持，所以需要自行实现解析握手包功能，先写一个 lua 脚本用于解析握手包：
 
 ::: details minecraft.lua
 ```shell
