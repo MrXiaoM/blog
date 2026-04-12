@@ -13,6 +13,8 @@ tags:
 sidebar: auto
 ---
 
+![](https://pic1.imgdb.cn/item/69dbb61cd93192251ec520cf.webp)
+
 书接上回，「[使用 VRoid Studio 捏脸，导出 VRChat 模型](/post/vroid-to-vrchat)」。所以上传等等就不赘述了，这篇文章主要讲模型制作。
 
 ## 前言
