@@ -1,5 +1,5 @@
 ---
-title: 在 Windows 下吗，转发 IP 请求到指定网卡 (网关)
+title: 在 Windows 下，转发 IP 请求到指定网卡 (网关)
 date: 2026-04-20 11:35:29
 permalink: /post/windows-route-ip-to-specific-gateway
 description: 主要用于内网访问
