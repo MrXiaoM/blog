@@ -78,16 +78,20 @@ adb shell getprop ro.oem.state
 我在刚拍摄版本号截图发到我群里的时候，有群友提了一句
 > 真假 userdebug？那不直接 adb root
 
-当时我是真没招了，去问了下 Claude：
-> ...   
-> 关于系统中的软件版本号带有 userdebug 结尾，并且也可以通过 adb root 取得 root shell，我该如何将系统更新到最新官方系统？
+当时我没太当回事，有 root 权限好像也没什么意义。
+
+直到我跑到签名校验失败这一步，我是真没招了，去问了下 Claude：
+> (上述截图的报错)
+> ...  
+> 关于系统中的软件版本号带有 userdebug 结尾，并且也可以通过 adb root 取得 root shell，我该如何将系统更新到最新官方系统？  
 
 得到的回答是
-> 你当前的系统是 userdebug 版本（通常带有测试签名或开发签名），而你下载的官方离线包是 user 版本（带有官方正式发布签名）。
-> ...
-> 方法三：修改 Recovery 绕过签名验证（高阶）
+> 你当前的系统是 userdebug 版本（通常带有测试签名或开发签名），而你下载的官方离线包是 user 版本（带有官方正式发布签名）。  
+> ...  
+> 方法三：修改 Recovery 绕过签名验证（高阶）  
+> ...  
 
-说到这个我就不困了，Claude 说签名校验在 Recovery 里面，那我又有带 root 权限的 ADB Shell，设备又没有 AB 分区，那不是随便刷吗？
+说到这个我就不困了，Claude 说签名校验在 Recovery 里面，那我又有带 root 权限的 ADB Shell，设备又没有 A/B 分区，那不是随便刷吗？
 
 ## 刷入正式版 Recovery
 
