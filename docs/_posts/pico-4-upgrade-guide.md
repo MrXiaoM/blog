@@ -103,6 +103,7 @@ Claude 给了我解包 Recovery 并修改其中的系统签名的方法，但是
 ```shell
 adb root
 adb shell
+
 dd if=/dev/block/by-name/recovery of=/sdcard/pico_recovery.bak.img
 exit
 ```
@@ -112,9 +113,10 @@ adb pull /sdcard/pico_recovery.bak.img
 然后将 `5.4.0` 官方更新包的 `recovery.img` 解压到 ADB 所在目录，然后刷进去：
 ```shell
 adb root
-adb shell
 adb push recovery.img /sdcard/
-adb if=/sdcard/recovery.img of=/dev/block/by-name/recovery
+adb shell
+
+dd if=/sdcard/recovery.img of=/dev/block/by-name/recovery
 sync
 exit
 ```
