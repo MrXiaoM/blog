@@ -13,7 +13,7 @@ sidebar: auto
 
 比较完整地整理 PICO 资料的文章好像不多，毕竟 PICO 一般就用来 SteamVR 串流，也不用多深入地跟手机一样去研究 root 之类的。
 
-在[上一篇文章](/post/pico-4-upgrade-guide)折腾系统升级时，找资料找得我挺辛苦的，所以我决定整理一下我目前为止的相关知识和资料，放到这篇文章中。
+在[上一篇文章](/post/pico-4-upgrade-guide)折腾系统升级时，找资料找得我挺辛苦的，所以我决定整理一下我目前为止收集的相关知识和资料，放到这篇文章中。
 
 这篇文章可能会不定期更新。
 
@@ -95,6 +95,7 @@ adb shell getprop ro.oem.state
 
 至少在 PICO 4，是没有 A/B 分区的，在 ADB Shell 中也可以使用这些命令来刷写分区
 | 命令 | 作用 | 示例 |
+| --- | --- | --- |
 | `dd if=分区 of=镜像路径` | 备份分区到指定路径 | `dd if=/dev/block/by-name/recovery of=/sdcard/pico_recovery.bak.img` |
 | `dd if=镜像路径 of=分区` | 刷入指定镜像到指定分区 | `dd if=/sdcard/recovery.img of=/dev/block/by-name/recovery` |
 | `sync` | 刷入分区之后，需要执行这个来同步变更 | `sync` |
