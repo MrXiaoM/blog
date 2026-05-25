@@ -59,6 +59,31 @@ adb shell getprop ro.oem.state
 
 正式重启升级时，会进入 Recovery 模式进行升级，如果官方包出现了签名校验错误的报错，可能说明你的机子 Recovery 已经被篡改了，无法适配官方包。如果有 root 权限，可以先从官方更新包提取 `recovery.img` 出来，刷进去再更新。
 
+## 转换/解包镜像
+
+通常在系统更新包里，有多个 Android data image 格式 (`.dat`) 的分区镜像，它们通常有这两个重要的文件：
++ `分区名.new.dat.br`
++ `分区名.transfer.list`
+
+通过 [Brotli](https://github.com/google/brotli) 工具可以将 `.dat.br` 文件解压为 `.dat` 文件，通过 [sdat2img](https://github.com/xpirt/sdat2img) 工具可以将 `.new.dat` 和 `.transfer.list` 转换为更加通用的 `.img` 文件。
+
+工具安装流程如下（需要 Linux 系统，在 Windows 可用 WSL 代替）：
+```shell
+cd ~
+sudo apt install python3 brotli git
+git clone https://github.com/xpirt/sdat2img
+```
+
+以 `system` 分区为例，用法如下：
+```shell
+# 先解压为 system.new.dat
+brotli -d -o system.new.dat system.new.dat.br
+# 然后转换为 system.img
+python3 ~/sdat2img/sdat2img.py system.transfer.list system.new.dat system.img
+```
+
+获得 `.img` 文件之后，可以下载 [MTK Extractor](https://androidmtk.com/download-mtk-extractor) 来解包这些文件。
+
 ## 软件下载
 
 + [ADB 平台工具](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn)
