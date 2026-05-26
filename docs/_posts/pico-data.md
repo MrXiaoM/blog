@@ -145,6 +145,7 @@ adb shell pm uninstall --user 0 com.pvr.home
 
 可以到以下网站下载自定义场景：
 + ~~picoenvironmentarchive.ct.ws~~ (免费域名寄了)
++ [picoenvironmentarchive.gt.tc](https://picoenvironmentarchive.gt.tc/) (恢复后的新站点)
 + [picoenvironmentarchive.github.io](https://picoenvironmentarchive.github.io/) (我的备份站)
 
 也可以按照主题管理器[作者提供的教程](https://gist.github.com/Nyabsi/c14bd38d03d6dc44721779c182762627)来打包 Unity 场景。
