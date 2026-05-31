@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Susie 的坏时光 - Mr_Xiao_M</title>
+	<link rel="manifest" href="appmanifest.json" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" href="loading-logo.png" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	 	<style type="text/css">
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+			position: absolute;
+			width: 640px;
+			height: 480px;
+			margin:0 auto;
+		}
+    </style>
+	<meta name="HandheldFriendly" content="true" />
+	
+	<meta name="mobile-web-app-capable" content="yes" />
+	<link rel="shortcut icon" href="loading-logo.png" />
+</head>
+<body> 
+	<div id="c2canvasdiv" style="float:left">
+		<canvas id="c2canvas" width="640" height="480">
+			你的浏览器可能不支持HTML5，这会让网页的某些功能无法使用 <br/>
+			请更换支持HTML5的主流浏览器，如Google Chrome、FireFox等
+		</canvas>
+	</div>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script src="c2runtime.js"></script>
+    <script>
+		jQuery(document).ready(function ()
+		{
+			cr_createRuntime("c2canvas");
+		});
+		
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+		
+		function OnRegisterSWError(e)
+		{
+			console.warn("Failed to register service worker: ", e);
+		};
+		
+		window.C2_RegisterSW = function C2_RegisterSW()
+		{
+			if (!navigator.serviceWorker)
+				return;
+			
+			try {
+				navigator.serviceWorker.register("sw.js", { scope: "./" })
+				.then(function (reg)
+				{
+					console.log("Registered service worker on " + reg.scope);
+				})
+				.catch(OnRegisterSWError);
+			}
+			catch (e)
+			{
+				OnRegisterSWError(e);
+			}
+		};
+	</script>
+</body>
+</html>

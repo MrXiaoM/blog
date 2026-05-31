@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Redirecting...</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	</head>
+	<body>
+		<script>
+            function fail(){
+                document.write("<h1>错误</h1><p>错误的请求，无效的参数类型“type”。");
+            }
+            function redirect(type){
+                if(type == "home"){
+                    window.location.href = "https://www.mrxiaom.top/cityzero";
+                }
+                else if(type == "qqgroup"){
+                    window.location.href = "https://jq.qq.com/?_wv=1027&k=lAVWy34M";
+                }
+                else fail();
+            }
+            var reg = new RegExp('(^|&)type=([^&]*)(&|$)', 'i');
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) {
+                redirect(unescape(r[2]));
+            }
+            else fail();
+		</script>
+	</body>
+</html>
