@@ -114,7 +114,7 @@ permalink: /friends
 > 名字: `人间工作P`  
 > 描述: `我每天都好困…`  
 > 头像: `https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg`  
-> 链接: `https://producer.mrxiaom.top/`
+> 链接: `https://www.mrxiaom.top/`
 
 ::: tip 提示
 提交友链申请时，请提供以下信息

@@ -3,7 +3,7 @@ import { VdoingThemeConfig } from './theme/types'
 import MarkdownItTaskLists from 'markdown-it-task-lists'
 import dayjs from 'dayjs'
 
-const DOMAIN_NAME = 'producer.mrxiaom.top' // 域名 (不带https)
+const DOMAIN_NAME = 'www.mrxiaom.top' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
