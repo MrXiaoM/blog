@@ -37,7 +37,6 @@ jobs:
       - name: Build
         run: |
           export TZ=Asia/Shanghai
-          yarn add vuepress-theme-vdoing@file:./vdoing/
           yarn
           yarn build
       - name: Upload artifact
