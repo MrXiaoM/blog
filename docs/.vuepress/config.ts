@@ -1,5 +1,5 @@
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
-import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+import { VdoingThemeConfig } from './theme/types'
 import MarkdownItTaskLists from 'markdown-it-task-lists'
 import dayjs from 'dayjs'
 
@@ -20,10 +20,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
   // 主题配置
   themeConfig: {
+    customHomeUrl: '/blog',
     // 导航配置
     nav: [
-      { text: '主站', link: 'https://www.mrxiaom.top' },
-      { text: '首页', link: '/' },
+      { text: '个人主页', link: '/' },
+      { text: '博客首页', link: '/blog' },
       { text: '系列', items: [
           { text: 'Bukkit开发教程', link: '/bukkit/' }
         ]

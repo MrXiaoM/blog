@@ -172,7 +172,9 @@ export interface VdoingThemeConfig extends NoSidebar4DefaultThemeConfig {
     pageBshowMode?: 'article' | 'custom',
     windowLB?: string,
     windowRB?: string,
-  }
+  },
+
+  customHomeUrl?: string;
 
   /**
    * 兼容其他未列举配置项
