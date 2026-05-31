@@ -14,6 +14,16 @@ export default ({
   router, // 当前应用的路由实例
   siteData // 站点元数据
 }) => {
+  const exemptRoutes = __EXEMPT_ROUTES__ || [];
+
+  router.beforeEach((to, from, next) => {
+    if (exemptRoutes.includes(to.path)) {
+      window.location.href = to.fullPath;
+      return next(false);
+    }
+    next();
+  });
+
   // 修复ISO8601时间格式为普通时间格式，以及添加作者信息
   siteData.pages.map(item => {
     const { frontmatter: { date, author } } = item

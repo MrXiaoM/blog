@@ -7,7 +7,6 @@ const DOMAIN_NAME = 'producer.mrxiaom.top' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing',
 
   locales: {
     '/': {

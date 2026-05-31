@@ -1,3 +1,4 @@
+const fs = require('fs')
 const path = require('path')
 const setFrontmatter = require('./node_utils/setFrontmatter')
 const getSidebarData = require('./node_utils/getSidebarData')
@@ -13,6 +14,34 @@ const CARD_IMG_LIST = 'cardImgList'
 // siteConfig base 配置
 let base = ''
 
+function scanPublicForHtmlRoutes(publicDir) {
+  let exemptRoutes = [];
+  if (!fs.existsSync(publicDir)) return exemptRoutes;
+
+  function scan(dir) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+      const fullPath = path.join(dir, file);
+      if (fs.statSync(fullPath).isDirectory()) {
+        scan(fullPath);
+      } else if (file === 'index.html') {
+        // 将绝对路径转换为路由路径，例如：
+        // /Users/xxx/.vuepress/public/index.html -> /
+        // /Users/xxx/.vuepress/public/demo/index.html -> /demo/
+        let routePath = fullPath
+          .replace(publicDir, '') // 剥离 base 路径
+          .replace(/\\/g, '/')     // 兼容 Windows 路径
+          .replace(/\/index\.html$/, '/'); // 将 index.html 替换为 /
+        
+        if (routePath === '/index.html') routePath = '/';
+        exemptRoutes.push(routePath);
+      }
+    }
+  }
+  
+  scan(publicDir);
+  return exemptRoutes;
+}
 
 // Theme API.
 module.exports = (options, ctx) => {
@@ -20,6 +49,10 @@ module.exports = (options, ctx) => {
 
   // base路径
   base = siteConfig.base || ''
+
+  const publicPath = path.resolve(ctx.sourceDir || process.cwd(), '.vuepress/public'); 
+  const exemptRoutes = scanPublicForHtmlRoutes(publicPath);
+  console.log('✅ 已扫描到以下物理 HTML 路由进行豁免:', exemptRoutes);
 
   // 自动设置front matter
   setFrontmatter(sourceDir, themeConfig)
@@ -64,6 +97,12 @@ module.exports = (options, ctx) => {
   return {
     alias() {
       return {}
+    },
+
+    define() {
+      return {
+        __EXEMPT_ROUTES__: JSON.stringify(exemptRoutes)
+      }
     },
 
     plugins: [
