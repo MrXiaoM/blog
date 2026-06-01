@@ -12,8 +12,3 @@ yarn dev
 # 如果是Windows运行
 yarn dev:win
 ```
-如果不支持软链接，请先使用以下命令将依赖改为使用文件引用，再构建
-```shell
-yarn add vuepress-theme-vdoing@file:./vdoing/
-```
-软链接方式的依赖支持自动重载，在调试的时候会比较方便一点。
