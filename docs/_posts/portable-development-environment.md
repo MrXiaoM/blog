@@ -50,7 +50,7 @@ sidebar: auto
 :::: tabs
 ::: tab link.cmd
 
-```bat
+```batch
 @echo off
 cd /d %~dp0
 echo.

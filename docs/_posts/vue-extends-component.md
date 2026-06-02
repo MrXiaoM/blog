@@ -21,7 +21,7 @@ sidebar: auto
 
 如你所见，创建一个 Markdown 编辑器预览组件是很简单的
 
-``` vue
+``` html
 <template>
   <MdPreview
     :modelValue="fileContent"
@@ -32,7 +32,7 @@ sidebar: auto
 
 麻烦就麻烦在这个自定义预览组件 `CustomPreview`，我需要实现上述功能是需要自行编写 `CustomPreview` 的，但是文档没有说可以使用插槽，文档说的实现 `CustomPreview` 需要添加三个属性，然后把这个组件类型给放到参数里即可使用。
 
-``` vue
+``` html
 <!-- CustomPreview.vue -->
 <script setup lang="ts">
 defineProps<{
@@ -54,7 +54,7 @@ defineProps<{
 是的，我们可以用 `defineComponent()` 方法重新实现一个组件，截胡输入进去的属性，将 `CustomPreview` 组件加到模板里，把属性同步进去就好了。
 
 我们需要在 `CustomPreview.vue` 里**额外**添加一个不使用组合式 API 的 `script` 块，用于添加静态方法，代码如下：
-``` vue
+``` html
 <script>
 import { h, reactive, toRefs } from 'vue';
 // 这是自身组件引用，注意导入不要重名，可以在最前面加个 My 或者其它什么的
@@ -86,7 +86,7 @@ export function wrapPreview(properties) {
 
 ## 使用
 
-``` vue
+``` html
 <template>
   <MdPreview
     :modelValue="fileContent"

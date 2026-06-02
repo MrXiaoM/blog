@@ -13,6 +13,9 @@ const log = console.log
 const Prism = require('prismjs')
 require('prismjs/components/prism-diff')
 require('prismjs/components/prism-yaml')
+require('prismjs/components/prism-apacheconf')
+require('prismjs/components/prism-nginx')
+require('prismjs/components/prism-batch')
 const markdownItPrism = require('markdown-it-prism')
 const MarkdownItTaskLists = require('markdown-it-task-lists')
 

@@ -30,7 +30,7 @@ nano /etc/haproxy/haproxy.cfg
 
 > 注意：`bind :::25565` 是绑定 IPv6 地址，如果不需要可以删掉。
 
-```apache
+```apacheconf
 global
         log stdout format raw local0
         maxconn 4096
@@ -142,31 +142,31 @@ end)
 
 然后编辑 haproxy.cfg 配置，进行如下修改
 
-```diff
-global
-        log stdout format raw local0
-        maxconn 4096
-+       lua-load /etc/haproxy/minecraft.lua
+```diff-apacheconf
+ global
+         log stdout format raw local0
+         maxconn 4096
++        lua-load /etc/haproxy/minecraft.lua
  
-defaults
+ defaults
 ```
-```diff
-frontend tcp_proxy_front
-        bind *:25565
-        mode tcp
-
-+       tcp-request inspect-delay 5s
-+       tcp-request content lua.mc_handshake if { req.len ge 10 }
-+       tcp-request content accept if { req.len gt 10 }
+```diff-apacheconf
+ frontend tcp_proxy_front
+         bind *:25565
+         mode tcp
+ 
++        tcp-request inspect-delay 5s
++        tcp-request content lua.mc_handshake if { req.len ge 10 }
++        tcp-request content accept if { req.len gt 10 }
 +
-+       use_backend 后端名 if { var(req.mc_host) -m str -i 你的域名 }
++        use_backend 后端名 if { var(req.mc_host) -m str -i 你的域名 }
 +
-        default_backend tcp_proxy_back
+         default_backend tcp_proxy_back
 ```
 
 然后再在配置最后面添加后端就好了，示例如下
 
-```apache
+```apacheconf
 frontend tcp_proxy_front
         # 仅作示例，这里仅编写需要添加的内容
 
@@ -186,7 +186,7 @@ backend my_proxy_1
 省流，完整示例如下
 
 ::: details haproxy.cfg
-```apache
+```apacheconf
 global
         log stdout format raw local0
         maxconn 4096
