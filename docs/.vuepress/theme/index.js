@@ -1,11 +1,16 @@
 const fs = require('fs')
 const path = require('path')
+const Config = require('markdown-it-chain')
+const { removePlugin } = require('@vuepress/markdown')
+const { PLUGINS } = require('@vuepress/markdown/lib/constant')
 const setFrontmatter = require('./node_utils/setFrontmatter')
 const getSidebarData = require('./node_utils/getSidebarData')
 const { createPage, deletePage } = require('./node_utils/handlePage')
 const chalk = require('chalk') // 命令行打印美化
 const yaml = require('js-yaml') // yaml转js
 const log = console.log
+
+const MarkdownItTaskLists = require('markdown-it-task-lists')
 
 // md容器名
 const CARD_LIST = 'cardList'
@@ -106,6 +111,23 @@ module.exports = (options, ctx) => {
     },
 
     plugins: [
+      (options, context) => ({
+        name: 'my-internal-plugin',
+        
+        /**
+         * @param {Config} config 
+         */
+        chainMarkdown(config) {
+          config
+            .plugin('taskLists')
+            .use(MarkdownItTaskLists, [Object.assign({
+              label: true,
+              enabled: true
+            })])
+            .end()
+        }
+
+      }),
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/plugin-nprogress',
       ['smooth-scroll', enableSmoothScroll],

@@ -1,6 +1,5 @@
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from './theme/types'
-import MarkdownItTaskLists from 'markdown-it-task-lists'
 import dayjs from 'dayjs'
 
 const DOMAIN_NAME = 'www.mrxiaom.top' // 域名 (不带https)
@@ -151,7 +150,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '个人技术博客,技术文档,人间工作P,人间工作,kotlin,java,csharp,c#,python,git,github,markdown',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: 'codeva-o8iMAsmwkT' }],
     ['meta', { name: 'theme-color', content: '#bb4445' }], // 移动浏览器主题颜色
   ],
 
@@ -173,16 +171,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     'tabs',
     
     [
-      'one-click-copy', // 代码块复制按钮
-      {
-        copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
-        copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
-        duration: 1000, // prompt message display time.
-        showInMobile: false, // whether to display on the mobile side, default: false.
-      },
-    ],
-
-    [
       'vuepress-plugin-zooming', // 放大图片
       {
         selector: '.theme-vdoing-content img:not(.no-zoom)', // 排除class是no-zoom的图片
@@ -203,11 +191,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   ],
 
   markdown: {
-    lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
-    extendMarkdown: (md) => { // 添加扩展插件
-      md.use(MarkdownItTaskLists, { label: true, enabled: true})
-    },
   },
 
   // 监听文件变化并重新构建
