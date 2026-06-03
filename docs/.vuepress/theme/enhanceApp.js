@@ -6,7 +6,9 @@ import CodeGroup from "@theme/global-components/CodeGroup.vue"
 Vue.component(CodeBlock)
 Vue.component(CodeGroup)
 
-import 'prismjs'
+import Prism from 'prismjs'
+import 'prismjs/components/prism-diff'
+import 'prismjs/components/prism-batch'
 import 'prismjs/plugins/diff-highlight/prism-diff-highlight.js'
 import 'prismjs/plugins/match-braces/prism-match-braces.js'
 
@@ -47,9 +49,11 @@ export default ({
   Vue.mixin(postsMixin)
   
   if (typeof window !== 'undefined') {
-    Vue.nextTick(startCodeBlockEnhancer)
+    router.onReady(() => {
+      window.setTimeout(startCodeBlockEnhancer, 0)
+    })
     router.afterEach(() => {
-      Vue.nextTick(scheduleEnhanceCodeBlocks)
+      window.setTimeout(scheduleEnhanceCodeBlocks, 0)
     })
   }
 }
@@ -67,6 +71,8 @@ function zero(d) {
   return d.toString().padStart(2, '0')
 }
 
+let codeBlockEnhanceScheduled = false
+
 function startCodeBlockEnhancer() {
   scheduleEnhanceCodeBlocks()
   observeCodeBlockChanges()
@@ -79,20 +85,24 @@ function startCodeBlockEnhancer() {
   const timer = window.setInterval(() => {
     scheduleEnhanceCodeBlocks()
     runs += 1
-    if (runs >= 10 || document.querySelector('div[class*="language-"] > pre, pre[class*="language-"]')) {
+    if (runs >= 10 || document.querySelector('div[class*="language-"] > pre')) {
       window.clearInterval(timer)
     }
   }, 120)
 }
 
 function scheduleEnhanceCodeBlocks() {
-  enhanceCodeBlocks()
-  window.requestAnimationFrame(() => {
-    enhanceCodeBlocks()
-    window.requestAnimationFrame(enhanceCodeBlocks)
-  })
-  window.setTimeout(enhanceCodeBlocks, 80)
-  window.setTimeout(enhanceCodeBlocks, 240)
+  if (codeBlockEnhanceScheduled) return
+  codeBlockEnhanceScheduled = true
+
+  window.setTimeout(() => {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        codeBlockEnhanceScheduled = false
+        enhanceCodeBlocks()
+      })
+    })
+  }, 0)
 }
 
 function observeCodeBlockChanges() {
@@ -105,35 +115,78 @@ function observeCodeBlockChanges() {
 }
 
 function enhanceCodeBlocks() {
-  document.querySelectorAll('pre[class*="language-"], div[class*="language-"] pre').forEach(pre => {
-    const wrapper = getCodeWrapper(pre)
-    const code = pre.querySelector('code')
-    if (!wrapper || !code) return
+  document.querySelectorAll('div[class*="language-"] > pre, .tabs-component-panel pre').forEach(pre => {
+    if (!isEnhanceableCodeBlock(pre)) return
 
-    const lang = normalizeCodeLang(getLanguage(pre, code, wrapper))
-    wrapper.classList.add('line-numbers-mode')
-
-    if (!wrapper.querySelector(':scope > .code-lang')) {
-      const langNode = document.createElement('span')
-      langNode.className = 'code-lang'
-      langNode.textContent = lang
-      wrapper.insertBefore(langNode, wrapper.firstChild)
+    try {
+      enhanceCodeBlock(pre)
+    } catch (error) {
+      console.error('[code-block-enhancer] Failed to enhance code block.', error)
     }
-
-    wrapCodeLines(code)
-    ensureCopyButton(wrapper, code)
   })
 }
 
-function getCodeWrapper(pre) {
-  let element = pre.parentElement
-  while (element && element !== document.body) {
-    if (Array.from(element.classList).some(className => className.indexOf('language-') === 0)) {
-      return element
-    }
-    element = element.parentElement
+function enhanceCodeBlock(pre) {
+  const code = pre.querySelector(':scope > code')
+  if (!code) return
+
+  const lang = normalizeCodeLang(getLanguage(pre, code, pre.parentElement))
+  const wrapper = ensureCodeBlockWrapper(pre, lang)
+  wrapper.classList.add('line-numbers-mode')
+  pre.classList.add(`language-${lang}`)
+  code.classList.add(`language-${lang}`)
+
+  highlightCodeBlock(code, lang)
+
+  if (!wrapper.querySelector(':scope > .code-lang')) {
+    const langNode = document.createElement('span')
+    langNode.className = 'code-lang'
+    langNode.textContent = lang
+    wrapper.insertBefore(langNode, wrapper.firstChild)
   }
-  return null
+
+  wrapCodeLines(code)
+  ensureCopyButton(wrapper, code)
+}
+
+function isEnhanceableCodeBlock(pre) {
+  const code = pre.querySelector(':scope > code')
+
+  if (!pre.parentElement || !code) return false
+  if (pre.closest('.theme-code-group, .theme-code-block')) return false
+  if (pre.closest('.tabs-component-panel')) return isMountedTabCodeBlock(pre)
+  if (!pre.parentElement.matches('div[class*="language-"]')) return false
+  if (!Array.from(pre.parentElement.classList).some(className => className.indexOf('language-') === 0)) return false
+
+  return true
+}
+
+function isMountedTabCodeBlock(pre) {
+  const tabs = pre.closest('.tabs-component')
+  return !tabs || !!tabs.__vue__
+}
+
+function ensureCodeBlockWrapper(pre, lang) {
+  if (pre.parentElement.matches('div[class*="language-"]')) {
+    pre.parentElement.classList.add(`language-${lang}`, 'extra-class')
+    return pre.parentElement
+  }
+
+  const wrapper = document.createElement('div')
+  wrapper.className = `language-${lang} extra-class`
+  pre.parentNode.insertBefore(wrapper, pre)
+  wrapper.appendChild(pre)
+  return wrapper
+}
+
+function highlightCodeBlock(code, lang) {
+  if (code.dataset.prismHighlighted === 'true' || code.dataset.lineWrapped === 'true') return
+
+  const grammar = Prism.languages[lang]
+  if (grammar) {
+    code.innerHTML = Prism.highlight(code.textContent, grammar, lang)
+  }
+  code.dataset.prismHighlighted = 'true'
 }
 
 function getLanguage(...nodes) {
@@ -185,7 +238,7 @@ function appendNodeByLines(node, lines) {
     if (index > 0) {
       lines.push(createCodeLine())
     }
-    if (lineNode) {
+    if (lineNode && canAppendChild(lines[lines.length - 1])) {
       lines[lines.length - 1].appendChild(lineNode)
     }
   })
@@ -197,6 +250,10 @@ function splitNodeByLines(node) {
   }
 
   if (node.nodeType !== Node.ELEMENT_NODE) {
+    return [document.createTextNode(node.textContent || '')]
+  }
+
+  if (!canAppendChild(node)) {
     return [node.cloneNode(true)]
   }
 
@@ -206,12 +263,19 @@ function splitNodeByLines(node) {
       if (index > 0) {
         lineNodes.push(node.cloneNode(false))
       }
-      if (childLine) {
-        lineNodes[lineNodes.length - 1].appendChild(childLine)
+      const currentLine = lineNodes[lineNodes.length - 1]
+      if (childLine && canAppendChild(currentLine)) {
+        currentLine.appendChild(childLine)
       }
     })
   })
   return lineNodes
+}
+
+function canAppendChild(node) {
+  return node && node.nodeType === Node.ELEMENT_NODE
+    && typeof node.appendChild === 'function'
+    && !['AREA', 'BASE', 'BR', 'COL', 'EMBED', 'HR', 'IMG', 'INPUT', 'LINK', 'META', 'PARAM', 'SOURCE', 'TRACK', 'WBR'].includes(node.nodeName)
 }
 
 function removeTrailingEmptyLine(lines) {

@@ -151,6 +151,9 @@ module.exports = (options, ctx) => {
             .plugin(PLUGINS.PRE_WRAPPER)
               .use(codeBlockWrapper)
               .end()
+            .plugin('safe-tab-ids')
+              .use(safeTabIds)
+              .end()
         }
 
       }),
@@ -254,10 +257,77 @@ module.exports = (options, ctx) => {
   }
 }
 
+function safeTabIds(md) {
+  md.core.ruler.before('inline', 'safe_tab_ids', state => {
+    const usedIds = new Map()
+    state.tokens.forEach(token => {
+      if (token.type === 'container_tab_open') {
+        token.info = ensureSafeTabInfo(token.info, usedIds)
+      }
+    })
+  })
+}
+
+function ensureSafeTabInfo(info = '', usedIds = new Map()) {
+  const parts = splitTabInfo(info.trim().replace(/^tab\s*/, ''))
+  if (!parts.length) return info
+
+  const idIndex = parts.findIndex(part => /^id=/i.test(part))
+  const nameIndex = parts.findIndex(part => /^name=/i.test(part))
+  const titlePart = parts.find(part => !part.includes('='))
+  const source = idIndex >= 0
+    ? stripAttributeValue(parts[idIndex].split(/=(.*)/s)[1] || '')
+    : nameIndex >= 0
+      ? stripAttributeValue(parts[nameIndex].split(/=(.*)/s)[1] || '')
+      : stripAttributeValue(titlePart || '')
+  const id = dedupeSafeTabId(source, usedIds)
+
+  if (idIndex >= 0) {
+    parts[idIndex] = `id="${id}"`
+  } else {
+    parts.unshift(`id="${id}"`)
+  }
+
+  return `tab ${parts.join(' ')}`
+}
+
+function splitTabInfo(info) {
+  return info.match(/(?:[^\s"']+|"[^"]*"|'[^']*')+/g) || []
+}
+
+function stripAttributeValue(value) {
+  return String(value || '').trim().replace(/^['"]|['"]$/g, '')
+}
+
+function dedupeSafeTabId(value, usedIds) {
+  const base = `tab-${slugifyTabId(value) || hashString(value)}`
+  const count = (usedIds.get(base) || 0) + 1
+  usedIds.set(base, count)
+  return count > 1 ? `${base}-${count}` : base
+}
+
+function slugifyTabId(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+function hashString(value) {
+  return String(value || 'tab').split('').reduce((hash, char) => {
+    return ((hash << 5) - hash + char.charCodeAt(0)) >>> 0
+  }, 0).toString(36)
+}
+
 function codeBlockWrapper(md) {
   const wrap = (wrapped) => (...args) => {
     const [tokens, idx] = args
     const token = tokens[idx]
+    if (isInsideContainer(tokens, idx, 'tabs') || isInsideContainer(tokens, idx, 'tab')) {
+      return renderPlainCodeBlock(token)
+    }
+
     const rawCode = wrapped(...args)
     const lang = getCodeLang(token.info)
     const langClass = lang ? `language-${lang}` : 'language-text'
@@ -269,6 +339,34 @@ function codeBlockWrapper(md) {
   const { fence, code_block: codeBlock } = md.renderer.rules
   md.renderer.rules.fence = wrap(fence)
   md.renderer.rules.code_block = wrap(codeBlock)
+}
+
+function renderPlainCodeBlock(token) {
+  const lang = getCodeLang(token.info)
+  const langClass = lang ? ` class="language-${escapeHtml(lang)}"` : ''
+  return `<pre v-pre${langClass}><code${langClass}>${escapeHtml(token.content)}</code></pre>`
+}
+
+function isInsideContainer(tokens, idx, type) {
+  const openType = `container_${type}_open`
+  const closeType = `container_${type}_close`
+  const targetLevel = tokens[idx].level
+  let depth = 0
+
+  for (let i = idx - 1; i >= 0; i--) {
+    const token = tokens[i]
+    if (token.level > targetLevel) continue
+    if (token.type === closeType) {
+      depth += 1
+      continue
+    }
+    if (token.type === openType) {
+      if (depth === 0) return true
+      depth -= 1
+    }
+  }
+
+  return false
 }
 
 function getCodeLang(info = '') {
@@ -314,13 +412,17 @@ function renderCardList(tokens, idx, type) {
 
     for (let i = idx; i < tokens.length; i++) {
       let _tokens$i = tokens[i],
-        type = _tokens$i.type,
+        tokenType = _tokens$i.type,
         content = _tokens$i.content,
         _info = _tokens$i.info;
-      if (type === END_TYPE) break; // 遇到结束的 ':::' 时
+      if (tokenType === END_TYPE) break; // 遇到结束的 ':::' 时
       if (!content) continue;
-      if (type === 'fence' && _info === 'yaml') { // 是代码块类型，并且是yaml代码
+      if (tokenType === 'fence' && _info.trim() === 'yaml') { // 是代码块类型，并且是yaml代码
         yamlStr = content
+        _tokens$i.type = 'html_block'
+        _tokens$i.tag = ''
+        _tokens$i.content = ''
+        _tokens$i.children = null
       }
     }
 
