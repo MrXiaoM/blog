@@ -2,10 +2,8 @@
   "name": "theme-vdoing-blog",
   "version": "1.0.0",
   "scripts": {
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs",
-    "dev:win": "set NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs --no-cache",
-    "build:win": "set NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
+    "dev": "node --openssl-legacy-provider --max_old_space_size=4096 ./node_modules/vuepress/cli.js dev docs --no-cache",
+    "build": "node --openssl-legacy-provider --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs --no-cache",
     "deploy": "bash deploy.sh",
     "editFm": "node utils/editFrontmatter.js",
     "baiduPush": "node utils/baiduPush.js https://www.mrxiaom.top && bash baiduPush.sh"
