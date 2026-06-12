@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>中转站价格换算器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="rate-panel">
+        <div class="panel-header">
+          <p class="eyebrow">价格换算</p>
+          <h1>中转站价格计算器</h1>
+          <p class="panel-copy">输入人民币与可购买的美元额度，快速换算真实的每 1 美元额度价格。</p>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="cnyAmount">多少人民币的价格</label>
+          <div class="input-wrap">
+            <span class="input-prefix">¥</span>
+            <input id="cnyAmount" class="text-input" type="number" min="0" step="0.01" value="135.00" />
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="usdAmount">可以购买多少美元额度</label>
+          <div class="input-wrap">
+            <span class="input-prefix">$</span>
+            <input id="usdAmount" class="text-input" type="number" min="0" step="0.01" value="200.00" />
+          </div>
+        </div>
+
+        <section class="rate-result" aria-live="polite">
+          <div class="result-main">
+            <strong id="exchangeRate">¥</strong>
+            <span>≈ 每 $1 的实际价格</span>
+          </div>
+        </section>
+      </section>
+
+      <section class="cards-panel">
+        <div class="cards-header">
+          <p class="eyebrow">模型定价</p>
+          <h2>美元价格转人民币</h2>
+        </div>
+
+        <article class="model-stack" data-card="0" data-icon-mode="auto">
+          <section class="model-card input-card">
+            <div class="card-media">
+              <div class="icon-picker" data-bind="iconPicker">
+                <button class="icon-button" type="button" data-action="toggleIconPanel" aria-label="选择模型图标" aria-expanded="false">
+                  <img class="model-icon" data-bind="iconPreview" src="./img/gpt.svg" alt="gpt-x-x 图标" />
+                </button>
+                <div class="icon-menu" data-bind="iconMenu" hidden>
+                  <button class="icon-option is-active" type="button" data-icon-mode="auto">自动</button>
+                  <button class="icon-option" type="button" data-icon-mode="gpt">GPT</button>
+                  <button class="icon-option" type="button" data-icon-mode="claude">Claude</button>
+                  <button class="icon-option" type="button" data-icon-mode="google">Google</button>
+                  <button class="icon-option" type="button" data-icon-mode="deepseek">DeepSeek</button>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-topbar single card-headline">
+                <label class="sr-only" for="modelName0">模型名称</label>
+                <input id="modelName0" class="model-name-input" data-bind="nameInput" type="text" value="gpt-x.x" />
+              </div>
+              <div class="price-list editable table-like">
+                <label class="price-row">
+                  <span class="price-label">输入价格</span>
+                  <div class="price-input-wrap">
+                    <span>$</span>
+                    <input class="price-input" data-field="input" type="number" min="0" step="0.0001" value="2.5000" />
+                    <em>/ 1M Tokens</em>
+                  </div>
+                </label>
+                <label class="price-row">
+                  <span class="price-label">输出价格</span>
+                  <div class="price-input-wrap">
+                    <span>$</span>
+                    <input class="price-input" data-field="output" type="number" min="0" step="0.0001" value="15.0000" />
+                    <em>/ 1M Tokens</em>
+                  </div>
+                </label>
+                <label class="price-row">
+                  <span class="price-label">缓存读取价格</span>
+                  <div class="price-input-wrap">
+                    <span>$</span>
+                    <input class="price-input" data-field="cache" type="number" min="0" step="0.0001" value="0.4000" />
+                    <em>/ 1M Tokens</em>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </section>
+
+          <div class="arrow-divider" aria-hidden="true">↓</div>
+
+          <section class="model-card output-card">
+            <div class="card-media">
+              <img class="model-icon" data-bind="iconMirror" src="./img/gpt.svg" />
+            </div>
+            <div class="card-content">
+              <h3 class="model-title card-headline" data-bind="nameMirror"></h3>
+              <div class="price-list table-like">
+                <div class="price-row">
+                  <span class="price-label">输入价格</span>
+                  <div class="price-output-wrap">
+                    <strong data-bind="inputDisplay">¥ / 1M Tokens</strong>
+                  </div>
+                </div>
+                <div class="price-row">
+                  <span class="price-label">输出价格</span>
+                  <div class="price-output-wrap">
+                    <strong data-bind="outputDisplay">¥ / 1M Tokens</strong>
+                  </div>
+                </div>
+                <div class="price-row">
+                  <span class="price-label">缓存读取价格</span>
+                  <div class="price-output-wrap">
+                    <strong data-bind="cacheDisplay">¥ / 1M Tokens</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
