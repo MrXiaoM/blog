@@ -24,7 +24,7 @@ permalink: /friends
 
 - name: Mojade@破站
   desc: 放空每一天~
-  avatar: https://data.chahuyun.cn/config/a520573c8f012816539af41fbd8ecc65.jpg
+  avatar: https://pic1.imgdb.cn/item/6a320719b67c7e4f4a887169.webp
   link: https://chahuyun.cn/
   bgColor: '#ffe6fa'
   textColor: '#333333'
