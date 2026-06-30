@@ -27,3 +27,7 @@ sidebar: auto
 还可以搜索 `@ext:ms-python.vscode-python-envs Show`，将选项开启，这样终端就会有个激活 Python 环境的按钮了，需要的时候可以点击执行命令激活虚拟环境。
 
 > 微软你看看你干的什么好事 😡😡😡
+
+如果你用的新版本扩展，还需要搜索以下内容，去关闭额外的选项，也就是说 Python 扩展自带了环境贡献功能，用不着 Python Environments 了，所以相关选项变多了
++ `python.terminal.shell`
++ `python.terminal.activate`
