@@ -5,6 +5,7 @@ article: false
 permalink: /friends
 ---
 
+多多帮衬，感谢支持 ❤️❤️❤️
 ::: cardList
 ```yaml
 
@@ -14,6 +15,27 @@ permalink: /friends
   link: https://www.mcio.dev/
   bgColor: '#0e1630'
   textColor: '#a399fa'
+
+- name: Moyuu 中转站
+  desc: 使用此链接注册，即可支持我
+  avatar: https://pic1.imgdb.cn/item/6a44842876d7318aac69320c.webp
+  link: https://moyuu.cc/register?aff=ATtS
+  bgColor: '#16161a'
+  textColor: '#ec4899'
+
+- name: 雨云 rainyun
+  desc: 使用优惠码 uwu 注册或购买，即可支持我
+  avatar: https://pic1.imgdb.cn/item/67dfd05f88c538a9b5c511dc.png
+  link: https://www.rainyun.com/uwu_
+  bgColor: '#f8f8f8'
+  textColor: '#77bec9'
+
+```
+:::
+
+我的朋友们 🥰
+::: cardList
+```yaml
 
 - name: Lux 的小木屋
   desc: OP show show way
@@ -35,13 +57,6 @@ permalink: /friends
   link: https://blog.oneall.eu.org
   bgColor: '#eeeeee'
   textColor: '#383838'
-
-- name: 雨云 rainyun
-  desc: 使用优惠码 uwu 注册或购买，即可支持我
-  avatar: https://pic1.imgdb.cn/item/67dfd05f88c538a9b5c511dc.png
-  link: https://www.rainyun.com/uwu_
-  bgColor: '#f8f8f8'
-  textColor: '#77bec9'
 
 - name: PuddingKC's Blog
   desc: 愿你所热爱的依旧不减当年。
