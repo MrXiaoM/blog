@@ -28,7 +28,7 @@ permalink: /friends
   avatar: https://pic1.imgdb.cn/item/67dfd05f88c538a9b5c511dc.png
   link: https://www.rainyun.com/uwu_
   bgColor: '#f8f8f8'
-  textColor: '#77bec9'
+  textColor: '#37b5c1'
 
 ```
 :::
@@ -81,7 +81,7 @@ permalink: /friends
 
 - name: 白鹿原嚒の小破站
   desc: 偶尔折腾新奇有趣的各类项目，每天和 AI 斗智斗勇以开发网站新功能。
-  avatar: https://blog.blym.top/_astro/avatar.Cbl1KGw__Zky7W6.webp
+  avatar: https://cdn.blym.top/img/myicon.png
   link: https://blym.top/
   bgColor: '#ECF1DF'
   textColor: '#697b1a'
