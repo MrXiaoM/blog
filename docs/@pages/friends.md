@@ -20,7 +20,7 @@ permalink: /friends
   desc: 使用此链接注册，即可支持我
   avatar: https://pic1.imgdb.cn/item/6a44842876d7318aac69320c.webp
   link: https://moyuu.cc/register?aff=ATtS
-  bgColor: '#16161a'
+  bgColor: '#eaf5ff'
   textColor: '#ec4899'
 
 - name: 雨云 rainyun
