@@ -22,7 +22,7 @@ PICO OS 开启开发者模式的方式就不多说了，所有 Android 衍生系
 
 我早早就下载好了最新版系统离线包，拷贝到机器里面升级，提示 “检测到安装包不适用当前系统”。
 
-![](https://pic1.imgdb.cn/item/6a119d776211f5ac19ec36cd.webp)
+![](https://static.mcio.dev/legacy/6a119d776211f5ac19ec36cd.webp)
 
 从关于页面可以看出来，系统的版本是 `5.4.0`，我去查了一下，`5.4.0` 已经是 **2023年2月** 的系统了。而版本号上显示的更早，从版本号中间的日期能看出来 **2023年1月**，所以我猜测：
 > 也许是新的离线包格式（或者签名）旧系统已经不认识了，那就试试逐步升级，找不同版本的离线包做跳板。
@@ -69,7 +69,7 @@ adb shell getprop ro.oem.state
 
 但是！但是！进度条才走了几秒就报错了，停留在了 recovery 模式，显示以下报错日志
 
-![](https://pic1.imgdb.cn/item/6a119ec76211f5ac19ec36e9.webp)
+![](https://static.mcio.dev/legacy/6a119ec76211f5ac19ec36e9.webp)
 
 是的，签名校验失败。我就纳闷了，owo 大佬的网站提供的国区更新包都是转跳 PICO 官网下载的，怎么会签名校验失败呢？
 
@@ -124,11 +124,11 @@ exit
 
 刷完之后，直接联网并进入系统更新页面，就能看到最新系统推送了。
 
-![](https://pic1.imgdb.cn/item/6a11a1f66211f5ac19ec376e.webp)
+![](https://static.mcio.dev/legacy/6a11a1f66211f5ac19ec376e.webp)
 
 最后也是美美解决了原机器无法升级系统的问题，从 `5.4.0` 一步升级到了最新版 `5.13.7`。
 
-![](https://pic1.imgdb.cn/item/6a11a1f66211f5ac19ec376d.webp)
+![](https://static.mcio.dev/legacy/6a11a1f66211f5ac19ec376d.webp)
 
 ## 后续优化
 

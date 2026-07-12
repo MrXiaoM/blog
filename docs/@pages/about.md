@@ -5,7 +5,7 @@ article: false
 permalink: /about
 ---
 
-![头图](https://pic.imgdb.cn/item/668f5784d9c307b7e9a6d97f.png)
+![头图](https://static.mcio.dev/legacy/668f5784d9c307b7e9a6d97f.webp)
 
 我是人间工作P。
 

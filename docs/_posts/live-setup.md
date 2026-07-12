@@ -14,7 +14,7 @@ tags:
 sidebar: auto
 ---
 
-![](https://pic1.imgdb.cn/item/6921e4573203f7be0021f926.webp)
+![](https://static.mcio.dev/legacy/6921e4573203f7be0021f926.webp)
 
 近期我打算在B站[直播写代码](http://live.bilibili.com/14365466)，于是顺便在博客分享一下我的直播设备架构。
 
@@ -22,14 +22,14 @@ sidebar: auto
 
 首先是实拍图
 
-![](https://pic1.imgdb.cn/item/691bfa673203f7be00121dd3.webp)  
-![](https://pic1.imgdb.cn/item/691bfa673203f7be00121dd2.webp)  
+![](https://static.mcio.dev/legacy/691bfa673203f7be00121dd3.webp)  
+![](https://static.mcio.dev/legacy/691bfa673203f7be00121dd2.webp)  
 
 右边第一个无线鼠标是主力电脑的，第二个有线鼠标是推流机的；我的机械键盘可以切换有线和无线 2.4G，有线是主力电脑的，无线是推流机的，但一般推流机用不着键盘，用鼠标就足够开播了。
 
 然后是设备拓补结构图
 
-![](https://pic1.imgdb.cn/item/691bfcd43203f7be00122f96.webp)
+![](https://static.mcio.dev/legacy/691bfcd43203f7be00122f96.webp)
 
 其中
 + 采集卡的输入极限是 `1080p 60帧`，价格大概 `70 CNY`，没啥必要就不要录 4K，高清晰度的采集卡很贵。还有就是，无论如何都要将采集卡插到 USB 3.x 上面去，USB 2.0 带宽不够。

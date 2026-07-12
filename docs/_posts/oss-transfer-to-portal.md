@@ -14,7 +14,7 @@ tags:
 sidebar: auto
 ---
 
-![](https://pic1.imgdb.cn/item/680670c458cb8da5c8bd253e.png)
+![](https://static.mcio.dev/legacy/680670c458cb8da5c8bd253e.webp)
 
 很久以前在 jira 申请了 OSSRH 的仓库权限，在 Central Publishing Portal 推出的时候，jira 的申请通道关闭了，当时我感觉新的站点不太好用，就没太多去关注。现在，OSSRH 很快就要停止服务了，不得不去了解如何迁移到 Portal 了。
 
@@ -44,13 +44,13 @@ OSSRH 跟 Central Portal 的账号是不互通的，所以要按[官方指引](h
 
 然后登录你的 OSSRH，看看你的邮箱是多少
 
-![](https://pic1.imgdb.cn/item/6804bd9f58cb8da5c8b92a63.png)
+![](https://static.mcio.dev/legacy/6804bd9f58cb8da5c8b92a63.webp)
 
 如果你没有用过子域（比如根域名是 `top.mrxiaom`，如果发布过 `top.mrxiaom.mirai:overflow-api` 这样的包，就代表使用过子域），可以直接到 [Central](https://central.sonatype.com/) 用这个邮箱找回密码登录，然后在 [namespaces](https://central.sonatype.com/publishing/namespaces) 页面点击 `Migrate Namespace` 自助迁移。
 
 我是用过子域的，~~所以先在 https://central.sonatype.com/ 注册一个账号并登录。使用 Github 账号注册登录，之后会比较方便一点。~~ 用过子域也要在 [Central](https://central.sonatype.com/) 登录原来在 OSSRH 的账号，截图一个这个，放邮件附件。
 
-![](https://pic1.imgdb.cn/item/6805033d58cb8da5c8ba26c9.png)
+![](https://static.mcio.dev/legacy/6805033d58cb8da5c8ba26c9.webp)
 
 我之前写了一大段，删掉了重写，因为我发现 central support 的客服会跟你扯皮，如果你不明说你要进行 Manual Migration，它们会坚持让你尝试 Self-Service Migration，就好像默认你从来没看过文档一样。即使你一再强调你无法进行自助迁移，最后给出截图，客服发现自己理亏（或者它们的勾实系统，在回复里面根本不支持接收附件），不了了之。
 
@@ -70,7 +70,7 @@ I have learnt how to publish to Central Portal from the document. So please just
 
 虽然文档说明 Central Support 会验证命名空间是否还属于你，但我并没有被要求重新验证，直接过了，看情况吧。过了之后登录 Central Portal 的 `Namespace` 页面会显示你的命名空间已经 `Verified`，就像下图一样。因为我个人需要，我还开了 `Enable SNAPSHOTs`，如果你不需要可以不开。
 
-![](https://pic1.imgdb.cn/item/68066b4858cb8da5c8bd22cd.png)
+![](https://static.mcio.dev/legacy/68066b4858cb8da5c8bd22cd.webp)
 
 ## 更换插件
 
@@ -143,7 +143,7 @@ publishing {
 
 要注意的是，在测试的时候，要设置 `publishingType = PublishingType.USER_MANAGED`。这样，发布 release 版本到 Portal，不会真的发布出去，你可以在 [Deployments](https://central.sonatype.com/publishing) 页面查看是否成功，如果不成功会提示原因（一般是没签名、没 javadoc、把 SNAPSHOT 版本发上来了、目录格式错误等等乱七八糟的问题，跟以前一样），如果成功会显示 `VALIDATED`。
 
-![](https://pic1.imgdb.cn/item/68090fa658cb8da5c8c6bbd4.png)
+![](https://static.mcio.dev/legacy/68090fa658cb8da5c8c6bbd4.webp)
 
 这时，你可以选择点击 `Drop` 丢弃这个提交，或者点击 `Publish` 确认发布。在测试的时候挺方便的，等你测试到显示 `VALIDATED` 再把发布模式改成 `AUTOMATIC` 最合适。
 

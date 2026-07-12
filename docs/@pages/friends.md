@@ -18,14 +18,14 @@ permalink: /friends
 
 - name: Moyuu 中转站
   desc: 使用此链接注册，即可支持我
-  avatar: https://pic1.imgdb.cn/item/6a44842876d7318aac69320c.webp
+  avatar: https://static.mcio.dev/legacy/6a44842876d7318aac69320c.webp
   link: https://moyuu.cc/register?aff=ATtS
   bgColor: '#eaf5ff'
   textColor: '#ec4899'
 
 - name: 雨云 rainyun
   desc: 使用优惠码 uwu 注册或购买，即可支持我
-  avatar: https://pic1.imgdb.cn/item/67dfd05f88c538a9b5c511dc.png
+  avatar: https://static.mcio.dev/legacy/67dfd05f88c538a9b5c511dc.webp
   link: https://www.rainyun.com/uwu_
   bgColor: '#f8f8f8'
   textColor: '#37b5c1'
@@ -39,28 +39,28 @@ permalink: /friends
 
 - name: Lux 的小木屋
   desc: OP show show way
-  avatar: https://pic.imgdb.cn/item/6708f3bcd29ded1a8caf5abf.png
+  avatar: https://static.mcio.dev/legacy/6708f3bcd29ded1a8caf5abf.webp
   link: https://luxmix.top/
   bgColor: '#eff6fd'
   textColor: '#2196f3'
 
 - name: Mojade@破站
   desc: 放空每一天~
-  avatar: https://pic1.imgdb.cn/item/6a320719b67c7e4f4a887169.webp
+  avatar: https://static.mcio.dev/legacy/6a320719b67c7e4f4a887169.webp
   link: https://chahuyun.cn/
   bgColor: '#ffe6fa'
   textColor: '#333333'
 
 - name: r1a dev
   desc: r1a的开发记录/博客
-  avatar: https://pic1.imgdb.cn/item/69a51c30985d2a549ff86835.webp
+  avatar: https://static.mcio.dev/legacy/69a51c30985d2a549ff86835.webp
   link: https://blog.oneall.eu.org
   bgColor: '#eeeeee'
   textColor: '#383838'
 
 - name: PuddingKC's Blog
   desc: 愿你所热爱的依旧不减当年。
-  avatar: https://pic1.imgdb.cn/item/67ee9aa70ba3d5a1d7ec426d.webp
+  avatar: https://static.mcio.dev/legacy/67ee9aa70ba3d5a1d7ec426d.webp
   link: https://www.puddingkc.com/
   bgColor: '#1f1f20'
   textColor: '#fbe6b3'
@@ -74,7 +74,7 @@ permalink: /friends
 
 - name: ZXBHELLO
   desc: 这个类人比你懒，什么也没留下....吗?
-  avatar: https://pic1.imgdb.cn/item/690f75f93203f7be00e54db4.jpg
+  avatar: https://static.mcio.dev/legacy/690f75f93203f7be00e54db4.webp
   link: https://doc.zxbhello.top/
   bgColor: '#eff6fd'
   textColor: '#2196f3'

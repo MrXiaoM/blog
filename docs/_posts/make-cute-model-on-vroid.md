@@ -13,7 +13,7 @@ tags:
 sidebar: auto
 ---
 
-![](https://pic1.imgdb.cn/item/69dbb61cd93192251ec520cf.webp)
+![](https://static.mcio.dev/legacy/69dbb61cd93192251ec520cf.webp)
 
 书接上回，「[使用 VRoid Studio 捏脸，导出 VRChat 模型](/post/vroid-to-vrchat)」。所以上传等等就不赘述了，这篇文章主要讲模型制作。
 
@@ -21,7 +21,7 @@ sidebar: auto
 
 上次，使用 VRoid Studio 默认资产出来的模型比较同质化，不够风格化，不太合我的胃口，但是能用就先不管了。
 
-![](https://pic1.imgdb.cn/item/69db4936d93192251ec2f6d9.webp)
+![](https://static.mcio.dev/legacy/69db4936d93192251ec2f6d9.webp)
 
 近期，Gemini 给我生出来一张很 3D 的图之后，我意识到一件事。其实，更适合我的风格，以及大众更能够接受的风格，是「Q版人物模型」。严格来说，广受欢迎的猫娘模型 [Kipfel](https://boothplorer.com/avatar/5813187) 就是一个Q版风格的模型。
 
@@ -64,11 +64,11 @@ Q版（又称 cute 版）的模型主要是通过**简化人物细节**来达到
 点击「发型 -> 刘海」选项，然后在右侧点击「编辑发型」开始手动搓发型，你也可以先选好心仪的发型，调好颜色再进行修改。  
 修改发型是很繁琐的一件事，如界面所示，有什么东西可用已经告诉你了，你只需要上手试一试就知道要怎么编辑发型了，界面操作还是很直观的，就是改起来繁琐。
 
-![](https://pic1.imgdb.cn/item/69dba318d93192251ec48827.webp)
+![](https://static.mcio.dev/legacy/69dba318d93192251ec48827.webp)
 
 修改发型有一个很重要的点是修改纹理，默认纹理是有预制的高光的，这个高光很不 cute，需要把它去掉。  
 具体位置在编辑发型界面中先选中一个头发，然后再在右侧展开显示为亮色的材质，把“高光颜色”给关掉  
-![](https://pic1.imgdb.cn/item/69db9de9d93192251ec48696.webp)
+![](https://static.mcio.dev/legacy/69db9de9d93192251ec48696.webp)
 
 改完发型之后，然后是修改嘴巴颜色，先到「面部 -> 编辑表情」调一个会张嘴的表情，然后修改「嘴巴内部」，随便选一个自己喜欢的，这个倒是无所谓。
 
@@ -82,7 +82,7 @@ Q版（又称 cute 版）的模型主要是通过**简化人物细节**来达到
 一般需要修改两个地方的纹理，「眼睛」和「眼睛高光」，你可以参考一些Q版插画的眼睛来修改纹理，总之越简洁的眼睛，就越有感觉。  
 我就按我 OC 的设定，使用上下硬渐变颜色，并添加类似 fumo 玩偶的左上角白色圆圈高光。
 
-![](https://pic1.imgdb.cn/item/69db9e52d93192251ec486b7.webp)
+![](https://static.mcio.dev/legacy/69db9e52d93192251ec486b7.webp)
 
 如你所见，我复用了之前的服装，因为上次制作的这套服装稍微改改比例还能穿得上，就先用着了。
 

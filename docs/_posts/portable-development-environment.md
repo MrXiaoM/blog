@@ -27,7 +27,7 @@ sidebar: auto
 
 我往里面安装了 `FirPE` 作为平时维护电脑使用的工具，修改了 PE 的壁纸，并在 PE 启动后弹出一个自己写的 C 程序，用于引导用户执行重装系统等操作（主要是看起来酷）。硬盘中还放入了 Windows 11、Windows 10、CentOS、Ubuntu 的 ISO 镜像。
 
-![](https://pic1.imgdb.cn/item/68ad97cf58cb8da5c852a421.png)
+![](https://static.mcio.dev/legacy/68ad97cf58cb8da5c852a421.webp)
 
 除此之外，我的移动硬盘还会存一些安装包，方便重装系统后进行数字权利激活、安装 Adobe 全家桶、安装驱动、安装运行库等等。一些常用工具例如 Navicat 的安装包以及 Keygen 也会包含在其中。
 

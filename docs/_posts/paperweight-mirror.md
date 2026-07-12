@@ -14,7 +14,7 @@ sidebar: auto
 
 你可能会在构建 Paper、Purpur、Folia 时遇到这种问题
 
-![](https://pic1.imgdb.cn/item/67bc017ed0e0a243d4033616.png)
+![](https://static.mcio.dev/legacy/67bc017ed0e0a243d4033616.webp)
 
 `clonePaperRepo` 任务在执行 `git` 命令的时候出现了一个异常。通常来说都是网络问题导致的，也就是连不上 Github。
 

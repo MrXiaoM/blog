@@ -162,20 +162,20 @@ void ListenMessage()
 
 然后“转跳”，“转跳到名称” `aAppmsgmgrOnsyn`，也就是字符串 `"AppMsgMgr::OnSyncAppMsgAdd"` 的常量默认名称，
 
-![](https://pic.imgdb.cn/item/67024ffed29ded1a8c132760.png)
+![](https://static.mcio.dev/legacy/67024ffed29ded1a8c132760.webp)
 
 右键它，点击“交叉引用列表”，有两个结果，
 
-![](https://pic.imgdb.cn/item/67025091d29ded1a8c13aa69.png)
+![](https://static.mcio.dev/legacy/67025091d29ded1a8c13aa69.webp)
 
 两个是在同一个函数里的，任选一个点进它所在的函数，往上翻到函数名为止（这里是 `sub_18219AEB0`），然后右键这个函数，点击“交叉引用列表”，里面只有一个结果，  
 点进去，就是接收消息的函数了。
 
-![](https://pic.imgdb.cn/item/67025118d29ded1a8c141727.png)
+![](https://static.mcio.dev/legacy/67025118d29ded1a8c141727.webp)
 
 按 F5 生成伪代码，往下翻，在函数开头往下一点点的地方能找到字符串 `"notifymessage"`，以及它下面有一行 `某某 = 13;` 或 `某某 = 13i64;` 就代表找对了。
 
-![](https://pic.imgdb.cn/item/670251c0d29ded1a8c14ead5.png)
+![](https://static.mcio.dev/legacy/670251c0d29ded1a8c14ead5.webp)
 
 函数名一般包含了地址，格式为 `sub_地址`，这里是 `sub_182205510`。还要减去文件开头 HEADER 地址 `0000000180000000` 才是这个函数的地址，也就是 `0x2205510` 了。
 
@@ -187,7 +187,7 @@ void ListenMessage()
 
 根据 WeChatFerry 给出的点位，在相应地址附近写注释，大概就如下图所示。
 
-![](https://pic.imgdb.cn/item/67025e18d29ded1a8c1fff40.png)
+![](https://static.mcio.dev/legacy/67025e18d29ded1a8c1fff40.webp)
 
 (参数接入点2的注释应该是 `altAddress = bassAddress + 0x1C0`，改图麻烦，就懒得改了)
 
@@ -201,4 +201,4 @@ void ListenMessage()
 
 原本 WeChatFerry 的 rpc 我扬了，用不惯 proto，改成了序列化成 json 后用 libcurl 向某个地址发 http post，更符合我自己的风格。
 
-![](https://pic.imgdb.cn/item/67028e7ad29ded1a8c4dc63b.png)
+![](https://static.mcio.dev/legacy/67028e7ad29ded1a8c4dc63b.webp)

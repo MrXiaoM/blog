@@ -25,15 +25,15 @@ sidebar: auto
 本人使用 gpg4win 来创建密钥对，点击「文件」->「新建 OpenGPG 密钥对」，输入「名字」和「电子邮件地址」，勾选「使用密码句保护生成的密钥」。
 如果你想一劳永逸，点击「高级设置...」，将「有效期结束于」取消勾选，即为永久有效。
 
-![](https://pic.imgdb.cn/item/66f65ea8f21886ccc0e230ee.png)
+![](https://static.mcio.dev/legacy/66f65ea8f21886ccc0e230ee.webp)
 
 在弹出的窗口中输入该密钥对的密码、确认密码，这里设为 `testgpg1234`，请改为你自己的密码。
 
-![](https://pic.imgdb.cn/item/66f65ef8f21886ccc0e27dd3.png)
+![](https://static.mcio.dev/legacy/66f65ef8f21886ccc0e27dd3.webp)
 
 创建成功后，右键先「在服务器上发布」，然后再点击「备份私钥」，保存为 asc 格式，输入密码后保存，然后用任意文本编辑器打开（记事本也行）先放着备用。
 
-![](https://pic.imgdb.cn/item/66f66013f21886ccc0e38bb8.png)
+![](https://static.mcio.dev/legacy/66f66013f21886ccc0e38bb8.webp)
 
 ## 配置发布和签名
 
@@ -146,7 +146,7 @@ signingPassword=testgpg1234
 
 **记得一定要删除上面添加的测试配置，不要一不小心把私钥和密码推送上仓库了。**
 
-![](https://pic.imgdb.cn/item/66f666f8f21886ccc0eb8232.png)
+![](https://static.mcio.dev/legacy/66f666f8f21886ccc0eb8232.webp)
 
 ## 配置 Github Actions 工作流
 
@@ -190,7 +190,7 @@ jobs:
 
 接下来还需要配置 Secrets 供工作流读取，首先，进入仓库主页，点击仓库的「Settings」（注意不是用户的 Settings），往下翻，找到「Secrets and variables」，点击「Actions」，来到这个页面。
 
-![](https://pic.imgdb.cn/item/66f669e7f21886ccc0ef63e2.png)
+![](https://static.mcio.dev/legacy/66f669e7f21886ccc0ef63e2.webp)
 
 依次添加表格中的内容
 
@@ -205,4 +205,4 @@ jobs:
 
 至此，你已完成通过 Github Actions 发布包到 Maven 仓库的配置。如果你是完全使用本教程提供的工作流配置，到仓库的 Actions 页，点击 Run workflow 即可一键运行发布。
 
-![](https://pic.imgdb.cn/item/66f66acaf21886ccc0f091a3.png)
+![](https://static.mcio.dev/legacy/66f66acaf21886ccc0f091a3.webp)

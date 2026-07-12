@@ -23,7 +23,7 @@ sidebar: auto
 
 > 如果你很忙，[点击这里](https://dev.mysql.com/downloads/mysql/)可以直达。
 
-![](https://pic1.imgdb.cn/item/68f993ee3203f7be0090155a.webp)
+![](https://static.mcio.dev/legacy/68f993ee3203f7be0090155a.webp)
 
 转跳页面点击 `No thanks, just start my download.` 正式开始下载。
 
@@ -74,7 +74,7 @@ default-character-set=utf8mb4
 bin\mysqld --initialize --console
 ```
 
-![](https://pic1.imgdb.cn/item/68f998d83203f7be00903d92.webp)
+![](https://static.mcio.dev/legacy/68f998d83203f7be00903d92.webp)
 
 初始化完成之后，会在日志中提示 `root` 账户随机生成的密码，把它记下来。
 
