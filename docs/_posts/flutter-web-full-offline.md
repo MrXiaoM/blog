@@ -16,6 +16,10 @@ sidebar: auto
 
 找了很多资料也没找到比较优雅的解决方案，于是决定自己研究一下。
 
+::: warning
+Flutter Web 是史，不要用，尽快迁移到别的网页前端框架，早迁移早脱困。
+:::
+
 ## 静态资源
 
 像是 canvaskit 这类静态资源，flutter 的命令行帮助就有提示，添加 `--no-web-resources-cdn` 就能将这些静态资源放到本地，而非从 Google 的 CDN 下载。
