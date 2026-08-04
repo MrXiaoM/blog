@@ -35,7 +35,7 @@ permalink: /friends
   avatar: https://rewards.bing.com/rewardscdn/images/rewards/rewards-icon-96.png
   link: https://rewards.bing.com/welcome?rh=FF260D11&ref=rafsrchae
   bgColor: '#f8f4f1'
-  textColor: '#fdd5b6'
+  textColor: '#4848b3'
 
 ```
 :::
