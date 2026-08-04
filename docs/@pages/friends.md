@@ -44,13 +44,6 @@ permalink: /friends
 ::: cardList
 ```yaml
 
-- name: Lux 的小木屋
-  desc: OP show show way
-  avatar: https://static.mcio.dev/legacy/6708f3bcd29ded1a8caf5abf.webp
-  link: https://luxmix.top/
-  bgColor: '#eff6fd'
-  textColor: '#2196f3'
-
 - name: Mojade@破站
   desc: 放空每一天~
   avatar: https://static.mcio.dev/legacy/6a320719b67c7e4f4a887169.webp
@@ -79,13 +72,6 @@ permalink: /friends
   bgColor: '#89262D'
   textColor: '#f8f8f8'
 
-- name: ZXBHELLO
-  desc: 这个类人比你懒，什么也没留下....吗?
-  avatar: https://static.mcio.dev/legacy/690f75f93203f7be00e54db4.webp
-  link: https://doc.zxbhello.top/
-  bgColor: '#eff6fd'
-  textColor: '#2196f3'
-
 - name: 白鹿原嚒の小破站
   desc: 偶尔折腾新奇有趣的各类项目，每天和 AI 斗智斗勇以开发网站新功能。
   avatar: https://cdn.blym.top/img/myicon.png
@@ -106,13 +92,6 @@ permalink: /friends
   link: https://blog.na3alf6.cn/
   bgColor: '#F6F4FB'
   textColor: '#ad87ed'
-
-- name: 小雨の空间
-  desc: 一个热爱生活、喜欢分享的小可爱～这里记录着我的日常、想法和美好时光。
-  avatar: https://xyqaq.cn/imgs/avg.jpg
-  link: https://xyqaq.cn/
-  bgColor: '#F1F4FE'
-  textColor: '#ff6b9d'
 
 - name: 午夜的个人小站
   desc: 用代码表达言语的魅力，用代码书写山河的壮丽。
@@ -143,4 +122,33 @@ permalink: /friends
 
 + 必选信息: `名字`, `描述`, `头像`, `链接`  
 + 可选信息: `背景颜色(16进制)`, `文本颜色(16进制)`
+:::
+
+部分链接访问性不佳，已移到下方
+
+::: cardList
+```yaml
+
+- name: Lux 的小木屋
+  desc: OP show show way
+  avatar: https://static.mcio.dev/legacy/6708f3bcd29ded1a8caf5abf.webp
+  link: https://luxmix.top/
+  bgColor: '#eff6fd'
+  textColor: '#2196f3'
+
+- name: ZXBHELLO
+  desc: 这个类人比你懒，什么也没留下....吗?
+  avatar: https://static.mcio.dev/legacy/690f75f93203f7be00e54db4.webp
+  link: https://doc.zxbhello.top/
+  bgColor: '#eff6fd'
+  textColor: '#2196f3'
+
+- name: 小雨の空间
+  desc: 一个热爱生活、喜欢分享的小可爱～这里记录着我的日常、想法和美好时光。
+  avatar: https://xyqaq.cn/imgs/avg.jpg
+  link: https://xyqaq.cn/
+  bgColor: '#F1F4FE'
+  textColor: '#ff6b9d'
+
+```
 :::
