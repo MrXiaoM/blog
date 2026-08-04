@@ -30,6 +30,13 @@ permalink: /friends
   bgColor: '#f8f8f8'
   textColor: '#37b5c1'
 
+- name: 必应 Rewards
+  desc: 邀请好友赚积分
+  avatar: https://rewards.bing.com/rewardscdn/images/rewards/rewards-icon-96.png
+  link: https://rewards.bing.com/welcome?rh=FF260D11&ref=rafsrchae
+  bgColor: '#f8f4f1'
+  textColor: '#fdd5b6'
+
 ```
 :::
 
