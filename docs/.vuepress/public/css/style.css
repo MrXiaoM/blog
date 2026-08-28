@@ -28,7 +28,6 @@ nav.horizontal ul li{ display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 body{
-	background:url(https://s1.ax1x.com/2020/04/24/J0PWVO.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	background-position: 50% 50%;
 	background-attachment: fixed;
@@ -246,7 +245,6 @@ btn-wayra:hover {
 /*--//social_media_icons_style--*/
 /*--pop-up--*/
 div#small-dialog1 {
-	background:url(../images/bg.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	background-position: 50% 50%;
 	background-attachment: fixed;
