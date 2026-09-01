@@ -107,6 +107,13 @@ permalink: /friends
   bgColor: '#D4E4F8'
   textColor: '#4D1DA3'
 
+- name: 小雨の空间
+  desc: 一个热爱生活、喜欢分享的小可爱～这里记录着我的日常、想法和美好时光。
+  avatar: https://xyqaq.cn/assets/imgs/avg.jpg
+  link: https://xyqaq.cn/
+  bgColor: '#F1F4FE'
+  textColor: '#ff6b9d'
+
 ```
 :::
 
@@ -142,13 +149,6 @@ permalink: /friends
   link: https://doc.zxbhello.top/
   bgColor: '#eff6fd'
   textColor: '#2196f3'
-
-- name: 小雨の空间
-  desc: 一个热爱生活、喜欢分享的小可爱～这里记录着我的日常、想法和美好时光。
-  avatar: https://xyqaq.cn/imgs/avg.jpg
-  link: https://xyqaq.cn/
-  bgColor: '#F1F4FE'
-  textColor: '#ff6b9d'
 
 ```
 :::
